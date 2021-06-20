@@ -1,48 +1,68 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
-
-        <x-jet-validation-errors class="mb-4" />
-
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
+@include('layouts.header')
+<body class="gray-bg" data-new-gr-c-s-check-loaded="14.1015.0" data-gr-ext-installed cz-shortcut-listen="true">
+    
+</body>
+<section class="category-header-area">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col">
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="http://pn-learning-management-system-online.test/home"><i class="fas fa-home"></i></a></li>
+                        <li class="breadcrumb-item">
+                            <a href="#">
+                                Sign Up 
+                            </a>
+                        </li>
+                    </ol>
+                </nav>
+                <h1 class="category-name">
+                    Register Yourself
+                </h1>
             </div>
-        @endif
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <div>
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+        </div>
+    </div>
+</section>
+<section class="category-course-list-area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+              <div class="user-dashboard-box mt-3">
+                  <div class="user-dashboard-content w-100 login-form hidden" style="display: block;">
+                      <div class="content-title-box">
+                          <div class="title">Login</div>
+                          <div class="subtitle">Provide Your Valid Login Credentials.</div>
+                      </div>
+                      <form method="POST" action="{{ route('login') }}">
+                      @csrf
+                          <div class="content-box">
+                              <div class="basic-group">
+                                  <div class="form-group">
+                                      <label for="login-email"><span class="input-field-icon"><i class="fas fa-envelope"></i></span>{{ __('Email') }}</label>
+                                      <input type="email" class="form-control" name="email" id="login-email" placeholder="Email" :value="old('email')" required autofocus>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="login-password"><span class="input-field-icon"><i class="fas fa-lock"></i></span>{{ __('Password') }}</label>
+                                      <input type="password" class="form-control" name="password" placeholder="Password" required autocomplete="current-password">
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="content-update-box">
+                            <button type="submit" class="btn">{{ __('Log in') }}</button>
+                            </div>
+                            <div class="forgot-pass text-center">
+                                  <span>or</span>
+                                @if (Route::has('password.request'))
+                                  <a href="{{ route('password.request') }}" >{{ __('Forgot your password?') }}</a>
+                                @endif
+                            </div>
+                            <div class="account-have text-center">
+                                Do Not Have An Account? <a href="{{ route('register') }}">Sign Up</a>
+                            </div>
+                        </form>
+                  </div>
+              </div>
             </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
-
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-jet-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-jet-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+        </div>
+    </div>
+</section>

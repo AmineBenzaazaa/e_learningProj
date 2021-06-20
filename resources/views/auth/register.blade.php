@@ -1,60 +1,77 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
-
-        <x-jet-validation-errors class="mb-4" />
-
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+@include('layouts.header')
+<body>
+<section class="category-header-area">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col">
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href=""><i class="fas fa-home"></i></a></li>
+                        <li class="breadcrumb-item">
+                            <a href="#">
+                                Login
+                            </a>
+                        </li>
+                    </ol>
+                </nav>
+                <h1 class="category-name">
+                    Registered User
+                </h1>
             </div>
-
-            <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+        </div>
+    </div>
+</section>
+<section class="category-course-list-area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+              <div class="user-dashboard-box mt-3">
+                  
+                  <div class="user-dashboard-content w-100 register-form hidden" style="display: block;">
+                      <div class="content-title-box">
+                          <div class="title">Registration Form</div>
+                          <div class="subtitle">Sign Up And Start Learning.</div>
+                      </div>
+                      <form method="POST" action="{{ route('register') }}">
+                        @csrf
+                        <div class="content-box">
+                              <div class="basic-group">
+                                  <div class="form-group">
+                                      <label for="first_name"><span class="input-field-icon"><i class="fas fa-user"></i></span> First Name:</label>
+                                      <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name" value="" required="">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="last_name"><span class="input-field-icon"><i class="fas fa-user"></i></span> Last Name:</label>
+                                      <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name" value="" required="">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="registration-email"><span class="input-field-icon"><i class="fas fa-envelope"></i></span> Email:</label>
+                                      <input type="email" class="form-control" name="email" id="registration-email" placeholder="Email" value="" required="">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="registration-password"><span class="input-field-icon"><i class="fas fa-lock"></i></span> Password:</label>
+                                      <input type="password" class="form-control" name="password" id="registration-password" placeholder="Password" value="" required="">
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="content-update-box">
+                          <x-jet-button class="ml-4">
+                            {{ __('Register') }}
+                        </x-jet-button>
+                          </div>
+                          <a class="underline text-sm text-gray-600 hover:text-gray-900 mx-auto text-center" href="{{ route('login') }}">
+                            {{ __('Already registered?') }}
+                        </a>
+                      </form>
+                  </div>
+              </div>
             </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
 
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
 
-            <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
 
-            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                <div class="mt-4">
-                    <x-jet-label for="terms">
-                        <div class="flex items-center">
-                            <x-jet-checkbox name="terms" id="terms"/>
 
-                            <div class="ml-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
-                                ]) !!}
-                            </div>
-                        </div>
-                    </x-jet-label>
-                </div>
-            @endif
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-jet-button class="ml-4">
-                    {{ __('Register') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
