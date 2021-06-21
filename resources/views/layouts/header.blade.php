@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="http://pn-learning-management-system-online.test/assets/frontend/default/css/select2.min.css">
         <link rel="stylesheet" href="http://pn-learning-management-system-online.test/assets/frontend/default/css/slick.css">
         <link rel="stylesheet" href="http://pn-learning-management-system-online.test/assets/frontend/default/css/slick-theme.css">
+        
         <!-- font awesome 5 -->
         <script src="https://kit.fontawesome.com/7b845e807e.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="http://pn-learning-management-system-online.test/assets/frontend/default/css/fontawesome-all.min.css">
@@ -44,7 +45,6 @@
             <div class="row">
             <div class="col">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
             <ul class="mobile-header-buttons">
             <li><a class="mobile-nav-trigger" href="#mobile-primary-nav">Menu<span></span></a></li>
             <li><a class="mobile-search-trigger" href="#mobile-search">Search<span></span></a></li>
@@ -75,11 +75,11 @@
             <i class="fas fa-angle-left"></i>
             <span class="icon"><i class="fas fa-plus"></i></span>
             Math          </a></li>
-                    <li><a href="http://pn-learning-management-system-online.test/home/courses?category=algebre">Algebre</a></li>
+                    <li><a href="{{ url('home/courses?category=algebre') }}">Algebre</a></li>
               </ul>
     </li>
     <li class="all-category-devided">
-    <a href="http://pn-learning-management-system-online.test/home/courses">
+    <a href="{{ url('home/courses') }}">
       <span class="icon"><i class="fa fa-align-justify"></i></span>
       <span>All Courses</span>
     </a>
@@ -99,8 +99,6 @@
               </div>
             </div>
           </form>
-
-          
           <div class="cart-box menu-icon-box" id="cart_items">
             <div class="icon">
             <a href="javascript::" onclick="showCartPage()"><i class="fas fa-shopping-cart"></i></a>

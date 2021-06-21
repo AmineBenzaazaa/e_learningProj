@@ -8,7 +8,7 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="http://pn-learning-management-system-online.test/home"><i class="fas fa-home"></i></a></li>
                         <li class="breadcrumb-item">
-                            <a href="#">
+                            <a href="{{ route('register') }}">
                                 Sign Up 
                             </a>
                         </li>
@@ -43,10 +43,10 @@
                                       <label for="login-password"><span class="input-field-icon"><i class="fas fa-lock"></i></span>{{ __('Password') }}</label>
                                       <input type="password" class="form-control" name="password" placeholder="Password" required autocomplete="current-password">
                                   </div>
-                              </div>
+                              </div>    
                             </div>
                             <div class="content-update-box">
-                            <button type="submit" class="btn">{{ __('Log in') }}</button>
+                                <button type="submit" class="btn">{{ __('Log in') }}</button>
                             </div>
                             <div class="forgot-pass text-center">
                                   <span>or</span>

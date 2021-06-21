@@ -8,7 +8,7 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href=""><i class="fas fa-home"></i></a></li>
                         <li class="breadcrumb-item">
-                            <a href="#">
+                            <a href="{{ route('login') }}">
                                 Login
                             </a>
                         </li>
@@ -26,7 +26,6 @@
         <div class="row justify-content-center">
             <div class="col-lg-9">
               <div class="user-dashboard-box mt-3">
-                  
                   <div class="user-dashboard-content w-100 register-form hidden" style="display: block;">
                       <div class="content-title-box">
                           <div class="title">Registration Form</div>
