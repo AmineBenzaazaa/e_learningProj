@@ -1,5 +1,5 @@
 @include('layouts.header')
-<body>
+<body class="gray-bg">
 <section class="category-header-area">
     <div class="container-lg">
         <div class="row">
@@ -55,22 +55,26 @@
                               </div>
                           </div>
                           <div class="content-update-box">
-                          <x-jet-button class="ml-4">
-                            {{ __('Register') }}
-                        </x-jet-button>
-                          </div>
-                          <a class="underline text-sm text-gray-600 hover:text-gray-900 mx-auto text-center" href="{{ route('login') }}">
-                            {{ __('Already registered?') }}
-                        </a>
-                      </form>
+                            <button type="submit" class="btn">{{ __('Sign Up') }}</button>
+                            </div>
+                            <div class="forgot-pass text-center">
+                                  <span>or</span>
+                                @if (Route::has('password.request'))
+                                  <a href="{{ route('password.request') }}" >{{ __('Forgot your password?') }}</a>
+                                @endif
+                            </div>
+                            <div class="account-have text-center">
+                                Already Have An Account? <a href="{{ route('login') }}">Login</a>
+                            </div>
+                        </form>
                   </div>
               </div>
             </div>
         </div>
     </div>
 </section>
-</body>
-</html>
+@include('layouts.footer')
+
 
 
 

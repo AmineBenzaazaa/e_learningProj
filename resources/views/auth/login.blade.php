@@ -1,7 +1,5 @@
 @include('layouts.header')
-<body class="gray-bg" data-new-gr-c-s-check-loaded="14.1015.0" data-gr-ext-installed cz-shortcut-listen="true">
-    
-</body>
+<body class="gray-bg">   
 <section class="category-header-area">
     <div class="container-lg">
         <div class="row">
@@ -66,3 +64,5 @@
         </div>
     </div>
 </section>
+</body>
+@include('layouts.footer')
