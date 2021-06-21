@@ -25,6 +25,7 @@
     <link href="http://pn-learning-management-system-online.test/assets/backend/css/main.css" rel="stylesheet" type="text/css">
 
     <!-- font awesome 5 -->
+    
     <link href="http://pn-learning-management-system-online.test/assets/backend/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
     <link href="http://pn-learning-management-system-online.test/assets/backend/css/font-awesome-icon-picker/fontawesome-iconpicker.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
