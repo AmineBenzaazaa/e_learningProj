@@ -49,7 +49,7 @@
             <li><a class="mobile-nav-trigger" href="#mobile-primary-nav">Menu<span></span></a></li>
             <li><a class="mobile-search-trigger" href="#mobile-search">Search<span></span></a></li>
           </ul>
-          <a href="#" class="navbar-brand"><img src="http://pn-learning-management-system-online.test/uploads/system/logo-dark.png" alt="" height="35"></a>
+          <a href="{{url('/')}}" class="navbar-brand"><img src="http://pn-learning-management-system-online.test/uploads/system/logo-dark.png" alt="" height="35"></a>
           <div class="main-nav-wrap">
         <div class="mobile-overlay"></div>
             <ul class="mobile-main-nav">
