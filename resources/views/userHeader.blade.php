@@ -79,11 +79,14 @@
                         <span>Settings</span>
                     </a>
                 <!-- Logout-->
-                <a href="http://pn-learning-management-system-online.test/login/logout" class="dropdown-item notify-item">
-                    <i class="mdi mdi-logout mr-1"></i>
-                    <span>Logout</span>
-                </a>
-
+                <form action="{{route('logout')}}" method="post">
+                @csrf
+                <button type="submit" class="dropdown-item notify-item">
+                <i class="mdi mdi-logout mr-1"></i>
+                <span>lougout</span>
+                </button>
+                
+                </form>
             </div>
         </li>
 

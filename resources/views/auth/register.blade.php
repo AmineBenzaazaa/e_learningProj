@@ -4,7 +4,6 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 @include('layouts.style')
 </head>
-
 <body>
 @include('layouts.head')
 <section class="category-header-area">
