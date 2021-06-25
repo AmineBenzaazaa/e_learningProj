@@ -7,9 +7,7 @@
 	</div>
 	<!--- Sidemenu -->
 		<ul class="metismenu side-nav side-nav-light in">
-
 			<li class="side-nav-title side-nav-item">Navigation</li>
-
 			<li class="side-nav-item active">
 				<a href="{{url('dashboard')}}" class="side-nav-link active" aria-expanded="false">
 					<i class="dripicons-view-apps"></i>
@@ -17,31 +15,21 @@
 				</a>
 			</li>
 
-			<li class="side-nav-item">
-				<a href="javascript: void(0);" class="side-nav-link " aria-expanded="false">
+            <li class="side-nav-item">
+				<a href="{{url('admin/categories')}}" class="side-nav-link " aria-expanded="false">
 					<i class="dripicons-network-1"></i>
-					<span> Categories </span>
-					<span class="menu-arrow"></span>
+					<span>Categories</span>
 				</a>
-				<ul class="side-nav-second-level collapse" aria-expanded="false" style="height: 0px;">
-					<li class="">
-						<a href="{{url('categories')}}">Categories</a>
-					</li>
-
-					<li class="">
-						<a href="{{url('add_category')}}">Add New Category</a>
-					</li>
-				</ul>
 			</li>
 
 			<li class="side-nav-item">
-				<a href="{{url('courses')}}" class="side-nav-link " aria-expanded="false">
+				<a href="{{url('admin/courses')}}" class="side-nav-link " aria-expanded="false">
 					<i class="dripicons-archive"></i>
 					<span>Courses</span>
 				</a>
 			</li>
 			<li class="side-nav-item">
-				<a href="{{url('users')}}" class="side-nav-link " aria-expanded="false">
+				<a href="{{url('admin/students')}}" class="side-nav-link " aria-expanded="false">
 					<i class="dripicons-user-group"></i>
 					<span>Students</span>
 				</a>
@@ -56,11 +44,11 @@
 				<ul class="side-nav-second-level collapse" aria-expanded="false">
 					<li class=""> 
                     <a href="{{url('admin_revenue')}} ">Admin Revenue</a> </li>
-							<li class="">
-								<a href="{{url('instructor_revenue')}} ">
+						<li class="">
+							<a href="{{url('instructor_revenue')}} ">
 									Instructor Revenue <span class="badge badge-danger-lighten badge-pill">0</span>
-								</a>
-					</li>
+							</a>
+				        </li>
 				</ul>
 			</li>
 
