@@ -227,7 +227,7 @@
          if (0 < o("#task-area-chart").length) {
              t.push(this.respChart(o("#task-area-chart"), "Line", {
                  labels: [
-                                          "January",
+                                        "January",
                                         "February",
                                         "March",
                                         "April",
