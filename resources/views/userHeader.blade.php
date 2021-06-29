@@ -57,7 +57,7 @@
                         <img src="http://pn-learning-management-system-online.test/uploads/user_image/placeholder.png" alt="user-image" class="rounded-circle">
                     </span>
                     <span style="color: #fff;">
-                                            <span class="account-user-name">admin admin</span>
+                        <span class="account-user-name">admin admin</span>
                         <span class="account-position">Admin</span>
                     </span>
                 </a>
@@ -68,7 +68,7 @@
                 </div>
 
                 <!-- Account -->
-                <a href="http://pn-learning-management-system-online.test/admin/manage_profile" class="dropdown-item notify-item">
+                <a href="{{url('admin/user_profile')}}" class="dropdown-item notify-item">
                     <i class="mdi mdi-account-circle mr-1"></i>
                     <span>My Account</span>
                 </a>
@@ -99,7 +99,7 @@
     </a>
     <div class="app-search">
         <h4 style="color: #fff; float: left;"> Learning Management System Online</h4>
-        <a href="http://pn-learning-management-system-online.test/home" target="" class="btn btn-outline-light ml-3">Visit Website</a>
+        <a href="{{url('/')}}" target="" class="btn btn-outline-light ml-3">Visit Website</a>
     </div>
     </div>
     </div>

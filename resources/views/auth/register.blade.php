@@ -44,9 +44,17 @@
                                       <input  class="form-control" id="name"  type="text" name="name" :value="old('name')" required autofocus autocomplete="name">
                                   </div>
                                   <div class="form-group">
-                                      <label for="email"><span class="input-field-icon"><i class="fas fa-envelope"></i></span> Email:</label>
+                                      <label for="email"><span class="input-field-icon"><i class="fas fa-user"></i></span> Email:</label>
                                       <input type="email" class="form-control" name="email" id="email" placeholder="Email"  >
                                   </div>
+                                  <div class="form-group">
+                                      <label for="role"><span class="input-field-icon"><i class="fas fa-envelope"></i></span> Email:</label>
+                                      <select name="role_id" id="role_id" class="form-control" required>
+                                            @foreach($roles as $role)
+                                                <option value="{{$role->id}}">{{$role->name}}</option>
+                                                <option value="{{$role->id}}">{{$role->name}}</option>
+                                            @endforeach
+                                      </select>
                                   <div class="form-group">
                                       <label for="password"><span class="input-field-icon"><i class="fas fa-lock"></i></span> Password:</label>
                                       <input type="password" class="form-control" name="password" id="password" placeholder="Password" >

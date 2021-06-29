@@ -36,20 +36,10 @@
 			</li>
 
 			<li class="side-nav-item">
-				<a href="javascript: void(0);" class="side-nav-link " aria-expanded="false">
+				<a href="{{url('admin/admin_revenue.blade')}}" class="side-nav-link " aria-expanded="false">
 					<i class="dripicons-box"></i>
-					<span> Report </span>
-					<span class="menu-arrow"></span>
+					<span>Admin Revenue</span>
 				</a>
-				<ul class="side-nav-second-level collapse" aria-expanded="false">
-					<li class=""> 
-                    <a href="{{url('admin_revenue')}} ">Admin Revenue</a> </li>
-						<li class="">
-							<a href="{{url('instructor_revenue')}} ">
-									Instructor Revenue <span class="badge badge-danger-lighten badge-pill">0</span>
-							</a>
-				        </li>
-				</ul>
 			</li>
 
 			<li class="side-nav-item">
@@ -60,34 +50,12 @@
 			</li>
 
 			<li class="side-nav-item">
-			<a href="javascript: void(0);" class="side-nav-link " aria-expanded="false">
-				<i class="dripicons-toggles"></i>
-				<span> Settings </span>
-				<span class="menu-arrow"></span>
-			</a>
-			<ul class="side-nav-second-level collapse" aria-expanded="false">
-				<li class="">
-					<a href="{{url('admin/system_settings')}}">System Settings</a>
-				</li>
-				<li class="">
-					<a href="{{url('admin/frontend_settings')}}">Website Settings</a>
-				</li>
-				<li class="">
-					<a href="{{url('admin/payment_settings')}}">Payment Settings</a>
-				</li>
-				<li class="">
-					<a href="{{url('admin/instructor_settings')}}">Instructor Settings</a>
-				</li>
-				<li class="">
-					<a href="{{url('admin/manage_language')}}">Language Settings</a>
-				</li>
-				<li class="">
-					<a href="{{url('admin/smtp_settings')}}">Smtp Settings</a>
-				</li>
-				<li class="">
-					<a href="{{url('admin/about')}}">About</a>
-				</li>
-			</ul>
-		</li>
+				<a href="{{url('user/profile')}}" class="side-nav-link " aria-expanded="false">
+					<i class="dripicons-message"></i>
+					<span>Settings</span>
+				</a>
+			</li>
+
+			
 	    </ul>
 </div>

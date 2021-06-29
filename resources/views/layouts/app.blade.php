@@ -57,7 +57,8 @@
         <x-jet-banner />
 
         <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
+            
+        @include('layouts.header')
 
             <!-- Page Heading -->
             @if (isset($header))

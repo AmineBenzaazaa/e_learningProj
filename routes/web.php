@@ -37,12 +37,28 @@ Route::get('admin/students', function () {
   return view('admin/students');
 });
 
+Route::get('admin/admin_revenue', function () {
+  return view('admin/admin_revenue');
+});
+
+Route::get('admin/message', function () {
+  return view('admin/message');
+});
+
+Route::get('Instructeur/dashboard', function () {
+  return view('Instructeur/dashboard');
+});
+
 Route::get('Instructeur/add_category', function () {
   return view('Instructeur/add_category');
 });
 
 Route::get('Instructeur/courses', function () {
   return view('Instructeur/courses');
+});
+
+Route::get('Instructeur/add_course', function () {
+  return view('Instructeur/add_course');
 });
 
 Route::get('Instructeur/instructor_revenue', function () {
