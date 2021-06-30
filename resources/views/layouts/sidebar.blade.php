@@ -36,7 +36,7 @@
 			</li>
 
 			<li class="side-nav-item">
-				<a href="{{url('admin/admin_revenue.blade')}}" class="side-nav-link " aria-expanded="false">
+				<a href="{{url('admin/admin_revenue')}}" class="side-nav-link " aria-expanded="false">
 					<i class="dripicons-box"></i>
 					<span>Admin Revenue</span>
 				</a>

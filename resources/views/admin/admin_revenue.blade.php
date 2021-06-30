@@ -7,7 +7,7 @@
             <!-- BEGIN CONTENT -->
             <!-- SIDEBAR -->
             <!-- ========== Left Sidebar Start ========== -->
-            @include('instructeur/sidebar')
+            @include('layouts.sidebar')
             <!-- PAGE CONTAINER-->
             <div class="content-page">
                 <div class="content">
@@ -40,7 +40,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            
+
                                             </tbody>
                                         </table>
                                     </div>
