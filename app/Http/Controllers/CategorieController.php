@@ -13,7 +13,7 @@ class CategorieController extends Controller
      */
     public function index()
     {
-        $categories = Categorie:all();
+        $categories = Categorie::get();
         return view('admin/categories')->with('cts',$categories);
     }
 
@@ -84,6 +84,7 @@ class CategorieController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categorie=Categorie::find($id)->delete();
+        return redirect(route('categories.index'));
     }
 }
