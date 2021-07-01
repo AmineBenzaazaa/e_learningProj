@@ -9,6 +9,8 @@
     <!-- all the css files -->
     <link rel="shortcut icon" href="http://pn-learning-management-system-online.test/uploads/system/favicon.png">
     <!-- third party css -->
+    <link rel="stylesheet" href="@icon/dripicons/dripicons.css">
+    <link rel="stylesheet" href="https://unpkg.com/@icon/dripicons/dripicons.css">
     <link href="http://pn-learning-management-system-online.test/assets/backend/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css">
     <link href="http://pn-learning-management-system-online.test/assets/backend/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css">
     <link href="http://pn-learning-management-system-online.test/assets/backend/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css">

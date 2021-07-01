@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="http://pn-learning-management-system-online.test/assets/frontend/default/css/slick-theme.css">
         
         <!-- font awesome 5 -->
+        <link rel="stylesheet" href="@icon/dripicons/dripicons.css">
         <script src="https://kit.fontawesome.com/7b845e807e.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="http://pn-learning-management-system-online.test/assets/frontend/default/css/fontawesome-all.min.css">
 

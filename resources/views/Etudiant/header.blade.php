@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="http://pn-learning-management-system-online.test/assets/frontend/default/css/slick.css">
     <link rel="stylesheet" href="http://pn-learning-management-system-online.test/assets/frontend/default/css/slick-theme.css">
     <!-- font awesome 5 -->
+    <link rel="stylesheet" href="@icon/dripicons/dripicons.css">
+    <link rel="stylesheet" href="https://unpkg.com/@icon/dripicons/dripicons.css">
     <link rel="stylesheet" href="http://pn-learning-management-system-online.test/assets/frontend/default/css/fontawesome-all.min.css">
 
     <link rel="stylesheet" href="http://pn-learning-management-system-online.test/assets/frontend/default/css/bootstrap.min.css">

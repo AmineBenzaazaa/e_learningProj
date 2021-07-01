@@ -61,7 +61,8 @@ class CategorieController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Categorie::where('id',$id)->first();
+        return view('admin/edit_category')->with('cts',$categories);
     }
 
     /**
@@ -73,7 +74,10 @@ class CategorieController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $old=Categorie::find($id);
+        $old->title=$request->title;
+        $old->save();
+        return redirect(route('categories.index'));    
     }
 
     /**
