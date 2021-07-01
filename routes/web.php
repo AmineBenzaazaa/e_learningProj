@@ -18,7 +18,16 @@ Route::get('/', function () {
 });
 
  Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dash');
+   $user=auth()->user();
+   if($user->hasRole('instructeur')){
+      return view('instructeur/dashboard');
+   }
+   if($user->hasRole('admin')){
+      return view('dash');
+  }
+  if($user->hasRole('etudiant')){
+    return view('welcome');
+}
  })->name('dashboard');
  
 Route::get('admin/categories', function () {

@@ -1,3 +1,7 @@
+@php
+    $roles=\Spatie\Permission\Models\Role::where('id','!=',2)->get();
+   // dd($roles);
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +55,6 @@
                                       <label for="role"><span class="input-field-icon"><i class="fas fa-envelope"></i></span> Email:</label>
                                       <select name="role_id" id="role_id" class="form-control" required>
                                             @foreach($roles as $role)
-                                                <option value="{{$role->id}}">{{$role->name}}</option>
                                                 <option value="{{$role->id}}">{{$role->name}}</option>
                                             @endforeach
                                       </select>
