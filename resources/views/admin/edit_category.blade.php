@@ -27,7 +27,7 @@
                                 <div class="card-body" data-select2-id="7">
                                     <div class="col-lg-12" data-select2-id="6">
                                         <h4 class="mb-3 header-title">Category Modify Form</h4>
-                                            <form class="required-form" action="{{route('categories.update', $cts['id'])}}" method="post" >
+                                            <form class="required-form" action="{{route('categories.update', $cts->id)}}" method="post" >
                                             @csrf
                                             @method('PUT')
                                             <div class="form-group">
