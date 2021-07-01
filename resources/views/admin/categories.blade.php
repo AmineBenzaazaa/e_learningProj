@@ -18,7 +18,7 @@
                                 <div class="card-body">
                                     <h4 class="page-title"> 
                                         <i class="mdi mdi-apple-keyboard-command title_icon"></i> Categories                  
-                                        <a href="{{url('admin\add_category')}}" class="btn btn-outline-primary btn-rounded alignToTitle">
+                                        <a href="{{route('categories.create')}}" class="btn btn-outline-primary btn-rounded alignToTitle">
                                         <i class="mdi mdi-plus">
                                         </i>Add New Category</a>
                                     </h4>

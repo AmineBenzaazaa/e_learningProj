@@ -16,7 +16,7 @@
 			</li>
 
             <li class="side-nav-item">
-				<a href="{{url('admin/categories')}}" class="side-nav-link " aria-expanded="false">
+				<a href="{{route('categories.index')}}" class="side-nav-link " aria-expanded="false">
 					<i class="dripicons-network-1"></i>
 					<span>Categories</span>
 				</a>

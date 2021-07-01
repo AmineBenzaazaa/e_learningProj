@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CategorieController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -93,3 +93,4 @@ Route::get('Etudiant/my_messages', function () {
 Route::get('Etudiant/user_profile', function () {
   return view('Etudiant/user_profile');
 });
+Route::resource('categories',CategorieController::class);

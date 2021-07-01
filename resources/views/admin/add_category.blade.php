@@ -28,18 +28,15 @@
                                 <div class="col-lg-12" data-select2-id="6">
                                     <h4 class="mb-3 header-title">Category Add Form</h4>
 
-                                    <form class="required-form" action="" method="post" enctype="multipart/form-data" data-select2-id="5">
-                                        <div class="form-group">
-                                            <label for="code">Category Code</label>
-                                            <input type="text" class="form-control" id="code" name="code" value="e4dd1a29da" readonly="">
-                                        </div>
+                                    <form class="required-form" action="{{route('categories.store')}}" method="post"  >
+                                        @csrf
 
                                         <div class="form-group">
-                                            <label for="name">Category Title<span class="required">*</span></label>
-                                            <input type="text" class="form-control" id="name" name="name" required="">
+                                            <label for="title">Category Title<span class="required">*</span></label>
+                                            <input type="text" class="form-control" id="title" name="title" required="">
                                         </div>
 
-                                        <button type="button" class="btn btn-primary" onclick="checkRequiredFields()">Submit</button>
+                                        <button type="submit" class="btn btn-primary" >Submit</button>
                                     </form>
                                 </div>
                                 </div> <!-- end card body-->
