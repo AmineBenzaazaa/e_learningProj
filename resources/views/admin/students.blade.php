@@ -16,10 +16,9 @@
                         <div class="col-xl-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="page-title"> 
-                                    <i class="mdi mdi-apple-keyboard-command title_icon"></i> 
-                                    Student                
-                                    <a href="{{url('admin/add_students')}} class="btn btn-outline-primary btn-rounded alignToTitle">
+                                <h4 class="page-title"> 
+                                    <i class="mdi mdi-apple-keyboard-command title_icon"></i> Student                
+                                    <a href="{{url('admin/add_students')}}" class="btn btn-outline-primary btn-rounded alignToTitle">
                                     <i class="mdi mdi-plus"></i>Add Student</a>
                                 </h4>
                                 </div> <!-- end card body-->
