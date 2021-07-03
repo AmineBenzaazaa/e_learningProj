@@ -46,6 +46,11 @@ Route::get('admin/students', function () {
   return view('admin/students');
 });
 
+Route::get('admin/add_students', function () {
+  return view('admin/add_students ');
+});
+
+
 Route::get('admin/admin_revenue', function () {
   return view('admin/admin_revenue');
 });

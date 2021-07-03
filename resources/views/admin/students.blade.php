@@ -16,7 +16,11 @@
                         <div class="col-xl-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> Student                <a href="http://pn-learning-management-system-online.test/admin/user_form/add_user_form" class="btn btn-outline-primary btn-rounded alignToTitle"><i class="mdi mdi-plus"></i>Add Student</a>
+                                    <h4 class="page-title"> 
+                                    <i class="mdi mdi-apple-keyboard-command title_icon"></i> 
+                                    Student                
+                                    <a href="{{url('admin/add_students')}} class="btn btn-outline-primary btn-rounded alignToTitle">
+                                    <i class="mdi mdi-plus"></i>Add Student</a>
                                 </h4>
                                 </div> <!-- end card body-->
                             </div> <!-- end card -->
@@ -43,8 +47,7 @@
                                                 <td>Amin Amine</td>
                                                 <td>AmineBenzaza0@gmail.com</td>
                                                 <td>
-                                                                                        <ul>
-                                                                                                </ul>
+                                                ----
                                                 </td>
                                                 <td>
                                                     <div class="dropright dropright">
@@ -58,7 +61,19 @@
                                                     </div>
                                                 </td>
                                             </tr></tbody>
-                                </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="basic-datatable_info" role="status" aria-live="polite">Showing 1 to 1 of 1 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="basic-datatable_paginate"><ul class="pagination pagination-rounded"><li class="paginate_button page-item previous disabled" id="basic-datatable_previous"><a href="#" aria-controls="basic-datatable" data-dt-idx="0" tabindex="0" class="page-link"><i class="mdi mdi-chevron-left"></i></a></li><li class="paginate_button page-item active"><a href="#" aria-controls="basic-datatable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="basic-datatable_next"><a href="#" aria-controls="basic-datatable" data-dt-idx="2" tabindex="0" class="page-link"><i class="mdi mdi-chevron-right"></i></a></li></ul></div></div></div></div>
+                                </table></div></div>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-5">
+                                    <div class="dataTables_info" id="basic-datatable_info" role="status" aria-live="polite">Showing 1 to 1 of 1 entries</div></div>
+                                    <div class="col-sm-12 col-md-7">
+                                    <div class="dataTables_paginate paging_simple_numbers" id="basic-datatable_paginate">
+                                        <ul class="pagination pagination-rounded">
+                                            <li class="paginate_button page-item previous disabled" id="basic-datatable_previous">
+                                                <a href="#" aria-controls="basic-datatable" data-dt-idx="0" tabindex="0" class="page-link">
+                                                    <i class="mdi mdi-chevron-left"></i>
+                                                </a>
+                                            </li>
+                                            <li class="paginate_button page-item active"><a href="#" aria-controls="basic-datatable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="basic-datatable_next"><a href="#" aria-controls="basic-datatable" data-dt-idx="2" tabindex="0" class="page-link"><i class="mdi mdi-chevron-right"></i></a></li></ul></div></div></div></div>
                                 </div>
                                 </div> <!-- end card body-->
                             </div> <!-- end card -->

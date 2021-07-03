@@ -58,27 +58,20 @@
                                             <th class="sorting" tabindex="0" aria-controls="basic-datatable" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending" style="width: 111.062px;">Created at</th>
                                             <th class="sorting" tabindex="0" aria-controls="basic-datatable" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 91.1339px;">Actions</th></tr>
                                     </thead>
-                                    <tbody>    
-                                    @foreach($cts as $ct)                 
+                                    <tbody>                     
+                                        @foreach((array) $donnees as $donne)
                                         <tr role="row" class="odd">
-                                            <td class="sorting_1">{{$ct->id}}</td>
-                                            <td>{{$ct->title}}</td>
-                                            <td>{{$ct->user->name}}</td>
-                                            <td>{{$ct->created_at}}</td>
+                                            <td class="sorting_1"></td>
+                                            <td>Amin Amine</td>
+                                            <td>AmineBenzaza0@gmail.com</td>
+                                            <td>07/01/2021</td>
                                             <td>
-                                                <a class="dropdown-item" href="{{route('categories.edit',[$ct->id])}}">Edit</a></li>
-                                                <form action="{{ route('categories.destroy', $ct['id']) }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button class="dropdown-item" type="submit" onclick="return confirm('Are you sure?')">Delete</button>
-                                                
-                                                </form>
+                                                <a class="dropdown-item" href="http://pn-learning-management-system-online.test/admin/user_form/edit_user_form/2">Edit</a></li>
+                                                <a class="dropdown-item" href="#" onclick="confirm_modal('http://pn-learning-management-system-online.test/admin/users/delete/2');">Delete</a></li>
                                             </td>
                                         </tr>
-                                        @endforeach
                                     </tbody>
-                                </table>
-                                </div></div><div class="row">
+                                </table></div></div><div class="row">
                                                     <div class="col-sm-12 col-md-5">
                                                     <div class="dataTables_info" id="basic-datatable_info" role="status" aria-live="polite">Showing 1 to 1 of 1 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="basic-datatable_paginate"><ul class="pagination pagination-rounded"><li class="paginate_button page-item previous disabled" id="basic-datatable_previous"><a href="#" aria-controls="basic-datatable" data-dt-idx="0" tabindex="0" class="page-link"><i class="mdi mdi-chevron-left"></i></a></li><li class="paginate_button page-item active"><a href="#" aria-controls="basic-datatable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="basic-datatable_next"><a href="#" aria-controls="basic-datatable" data-dt-idx="2" tabindex="0" class="page-link"><i class="mdi mdi-chevron-right"></i></a></li></ul></div></div></div></div>
                                 </div>
