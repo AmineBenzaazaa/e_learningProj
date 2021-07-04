@@ -69,7 +69,11 @@
                                         <td scope="row">{{$donne->created_at}}</td>
                                         <td>
                                             <a class="dropdown-item" href="{{route('categories.edit',$donne->id)}}">Edit</a></li>
-                                            <a class="dropdown-item" href="{{route('categories.destroy',$donne->id)}}" >Delete</a></li>
+                                            <form action="{{route('categories.destroy',$donne->id)}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="dropdown-item" onclick="return confirm('Are you sure?')">Delete</button>
+                                            </form>
                                         </td>
                                     </tr>
                                     @endforeach
