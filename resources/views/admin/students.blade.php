@@ -41,7 +41,7 @@
                                                             <tr role="row" class="odd">
                                                 <td class="sorting_1">1</td>
                                                 <td>
-                                                    <img src="http://pn-learning-management-system-online.test/uploads/user_image/placeholder.png" alt="" height="50" width="50" class="img-fluid rounded-circle img-thumbnail">
+                                                    <img src="uploads/user_image/placeholder.png" alt="" height="50" width="50" class="img-fluid rounded-circle img-thumbnail">
                                                 </td>
                                                 <td>Amin Amine</td>
                                                 <td>AmineBenzaza0@gmail.com</td>

@@ -8,7 +8,7 @@
             <li><a class="mobile-search-trigger" href="#mobile-search">Search<span></span></a></li>
           </ul>
 
-          <a href="http://pn-learning-management-system-online.test/" class="navbar-brand"><img src="http://pn-learning-management-system-online.test/uploads/system/logo-dark.png" alt="" height="35"></a>
+          <a href="http://pn-learning-management-system-online.test/" class="navbar-brand"><img src="uploads/system/logo-dark.png" alt="" height="35"></a>
 
           <div class="main-nav-wrap">
   <div class="mobile-overlay"></div>

@@ -150,7 +150,7 @@
 
                             <div class="table-responsive-sm mt-4">
                                                                     <div class="img-fluid w-100 text-center">
-                                    <img style="opacity: 1; width: 100px;" src="http://pn-learning-management-system-online.test/assets/backend/images/file-search.svg"><br>
+                                    <img style="opacity: 1; width: 100px;" src="assets/backend/images/file-search.svg"><br>
                                     No Data Found                    </div>
                                             </div>
                         </div>

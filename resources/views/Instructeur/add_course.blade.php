@@ -268,7 +268,7 @@
                                                                     <div class="col-md-10">
                                                                         <div class="wrapper-image-preview" style="margin-left: -6px;">
                                                                             <div class="box" style="width: 250px;">
-                                                                                <div class="js--image-preview" style="background-image: url(http://pn-learning-management-system-online.test/uploads/thumbnails/course_thumbnails/course-thumbnail.png); background-color: #F5F5F5;"></div>
+                                                                                <div class="js--image-preview" style="background-image: url(uploads/thumbnails/course_thumbnails/course-thumbnail.png); background-color: #F5F5F5;"></div>
                                                                                 <div class="upload-options">
                                                                                     <label for="course_thumbnail" class="btn"> <i class="mdi mdi-camera"></i> Course Thumbnail <br> <small>(600 X 600)</small> </label>
                                                                                     <input id="course_thumbnail" style="visibility:hidden;" type="file" class="image-upload" name="course_thumbnail" accept="image/*">
@@ -400,37 +400,37 @@
     </div>
             <!-- all the js files -->
                 <!-- bundle -->
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/app.min.js"></script>
+            <script src="assets/backend/js/app.min.js"></script>
             <!-- third party js -->
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/Chart.bundle.min.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/jquery.dataTables.min.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/dataTables.bootstrap4.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/dataTables.responsive.min.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/responsive.bootstrap4.min.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/dataTables.buttons.min.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/buttons.bootstrap4.min.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/buttons.html5.min.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/buttons.flash.min.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/buttons.print.min.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/dataTables.keyTable.min.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/dataTables.select.min.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/summernote-bs4.min.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/fullcalendar.min.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/pages/demo.summernote.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/dropzone.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/pages/demo.dashboard.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/pages/datatable-initializer.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/font-awesome-icon-picker/fontawesome-iconpicker.min.js" charset="utf-8"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/bootstrap-tagsinput.min.js" charset="utf-8"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/bootstrap-tagsinput.min.js"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/dropzone.min.js" charset="utf-8"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/ui/component.fileupload.js" charset="utf-8"></script>
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/pages/demo.form-wizard.js"></script>
+            <script src="assets/backend/js/vendor/Chart.bundle.min.js"></script>
+            <script src="assets/backend/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
+            <script src="assets/backend/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
+            <script src="assets/backend/js/vendor/jquery.dataTables.min.js"></script>
+            <script src="assets/backend/js/vendor/dataTables.bootstrap4.js"></script>
+            <script src="assets/backend/js/vendor/dataTables.responsive.min.js"></script>
+            <script src="assets/backend/js/vendor/responsive.bootstrap4.min.js"></script>
+            <script src="assets/backend/js/vendor/dataTables.buttons.min.js"></script>
+            <script src="assets/backend/js/vendor/buttons.bootstrap4.min.js"></script>
+            <script src="assets/backend/js/vendor/buttons.html5.min.js"></script>
+            <script src="assets/backend/js/vendor/buttons.flash.min.js"></script>
+            <script src="assets/backend/js/vendor/buttons.print.min.js"></script>
+            <script src="assets/backend/js/vendor/dataTables.keyTable.min.js"></script>
+            <script src="assets/backend/js/vendor/dataTables.select.min.js"></script>
+            <script src="assets/backend/js/vendor/summernote-bs4.min.js"></script>
+            <script src="assets/backend/js/vendor/fullcalendar.min.js"></script>
+            <script src="assets/backend/js/pages/demo.summernote.js"></script>
+            <script src="assets/backend/js/vendor/dropzone.js"></script>
+            <script src="assets/backend/js/pages/demo.dashboard.js"></script>
+            <script src="assets/backend/js/pages/datatable-initializer.js"></script>
+            <script src="assets/backend/js/font-awesome-icon-picker/fontawesome-iconpicker.min.js" charset="utf-8"></script>
+            <script src="assets/backend/js/vendor/bootstrap-tagsinput.min.js" charset="utf-8"></script>
+            <script src="assets/backend/js/bootstrap-tagsinput.min.js"></script>
+            <script src="assets/backend/js/vendor/dropzone.min.js" charset="utf-8"></script>
+            <script src="assets/backend/js/ui/component.fileupload.js" charset="utf-8"></script>
+            <script src="assets/backend/js/pages/demo.form-wizard.js"></script>
             <!-- dragula js-->
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/dragula.min.js"></script>
+            <script src="assets/backend/js/vendor/dragula.min.js"></script>
             <!-- component js -->
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/ui/component.dragula.js"></script>
+            <script src="assets/backend/js/ui/component.dragula.js"></script>
 
-            <script src="http://pn-learning-management-system-online.test/assets/backend/js/custom.js"></script>
+            <script src="assets/backend/js/custom.js"></script>

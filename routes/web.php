@@ -30,13 +30,8 @@ Route::get('/', function () {
 }
  })->name('dashboard');
  
-Route::get('admin/categories', function () {
-  return view('admin/categories');
-});
 
-Route::get('admin/add_category', function () {
-  return view('admin/add_category');
-});
+ Route::resource('categories',CategorieController::class);
 
 Route::get('admin/courses', function () {
   return view('admin/courses');
@@ -98,4 +93,4 @@ Route::get('Etudiant/my_messages', function () {
 Route::get('Etudiant/user_profile', function () {
   return view('Etudiant/user_profile');
 });
-Route::resource('categories',CategorieController::class);
+

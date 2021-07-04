@@ -1,7 +1,7 @@
 <div div="" class="left-side-menu left-side-menu-detached active">
 	<div class="leftbar-user active">
 		<a href="javascript: void(0);">
-			<img src="http://pn-learning-management-system-online.test/uploads/user_image/placeholder.png" alt="user-image" height="42" class="rounded-circle shadow-sm">
+			<img src="uploads/user_image/placeholder.png" alt="user-image" height="42" class="rounded-circle shadow-sm">
 			<span class="leftbar-user-name">admin admin</span>
 		</a>
 	</div>
@@ -16,7 +16,7 @@
 			</li>
 
             <li class="side-nav-item">
-				<a href="{{url('admin/categories')}}" class="side-nav-link " aria-expanded="false">
+				<a href="{{route('categories.index')}}" class="side-nav-link " aria-expanded="false">
 					<i class="dripicons-network-1"></i>
 					<span>Categories</span>
 				</a>

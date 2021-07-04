@@ -7,34 +7,34 @@
     <meta content="" name="description">
     <meta content="" name="author">
     <!-- all the css files -->
-    <link rel="shortcut icon" href="http://pn-learning-management-system-online.test/uploads/system/favicon.png">
+    <link rel="shortcut icon" href="uploads/system/favicon.png">
     <!-- third party css -->
     <link rel="stylesheet" href="@icon/dripicons/dripicons.css">
     <link rel="stylesheet" href="https://unpkg.com/@icon/dripicons/dripicons.css">
-    <link href="http://pn-learning-management-system-online.test/assets/backend/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css">
-    <link href="http://pn-learning-management-system-online.test/assets/backend/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css">
-    <link href="http://pn-learning-management-system-online.test/assets/backend/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css">
-    <link href="http://pn-learning-management-system-online.test/assets/backend/css/vendor/buttons.bootstrap4.css" rel="stylesheet" type="text/css">
-    <link href="http://pn-learning-management-system-online.test/assets/backend/css/vendor/select.bootstrap4.css" rel="stylesheet" type="text/css">
-    <link href="http://pn-learning-management-system-online.test/assets/backend/css/vendor/summernote-bs4.css" rel="stylesheet" type="text/css">
-    <link href="http://pn-learning-management-system-online.test/assets/backend/css/vendor/fullcalendar.min.css" rel="stylesheet" type="text/css">
-    <link href="http://pn-learning-management-system-online.test/assets/backend/css/vendor/dropzone.css" rel="stylesheet" type="text/css">
+    <link href="assets/backend/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css">
+    <link href="assets/backend/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css">
+    <link href="assets/backend/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css">
+    <link href="assets/backend/css/vendor/buttons.bootstrap4.css" rel="stylesheet" type="text/css">
+    <link href="assets/backend/css/vendor/select.bootstrap4.css" rel="stylesheet" type="text/css">
+    <link href="assets/backend/css/vendor/summernote-bs4.css" rel="stylesheet" type="text/css">
+    <link href="assets/backend/css/vendor/fullcalendar.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/backend/css/vendor/dropzone.css" rel="stylesheet" type="text/css">
     <!-- third party css end -->
     <!-- App css -->
-    <link href="http://pn-learning-management-system-online.test/assets/backend/css/app.min.css" rel="stylesheet" type="text/css">
-    <link href="http://pn-learning-management-system-online.test/assets/backend/css/icons.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/backend/css/app.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/backend/css/icons.min.css" rel="stylesheet" type="text/css">
 
-    <link href="http://pn-learning-management-system-online.test/assets/backend/css/main.css" rel="stylesheet" type="text/css">
+    <link href="assets/backend/css/main.css" rel="stylesheet" type="text/css">
 
     <!-- font awesome 5 -->
     
-    <link href="http://pn-learning-management-system-online.test/assets/backend/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
-    <link href="http://pn-learning-management-system-online.test/assets/backend/css/font-awesome-icon-picker/fontawesome-iconpicker.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/backend/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/backend/css/font-awesome-icon-picker/fontawesome-iconpicker.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
 
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <script src="http://pn-learning-management-system-online.test/assets/backend/js/jquery-3.3.1.min.js" charset="utf-8"></script>
-    <script src="http://pn-learning-management-system-online.test/assets/backend/js/onDomChange.js"></script>
+    <script src="assets/backend/js/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script src="assets/backend/js/onDomChange.js"></script>
     <style type="text/css">/* Chart.js */
     @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
 <body>
@@ -44,10 +44,10 @@
             <!-- LOGO -->
             <a href="http://pn-learning-management-system-online.test/Admin" class="topnav-logo" style="min-width: unset;">
                 <span class="topnav-logo-lg">
-                    <img src="http://pn-learning-management-system-online.test/uploads/system/logo-light.png" alt="" height="40">
+                    <img src="uploads/system/logo-light.png" alt="" height="40">
                 </span>
                 <span class="topnav-logo-sm">
-                    <img src="http://pn-learning-management-system-online.test/uploads/system/logo-light-sm.png" alt="" height="40">
+                    <img src="uploads/system/logo-light-sm.png" alt="" height="40">
                 </span>
             </a>
 
@@ -56,7 +56,7 @@
                 <li class="dropdown notification-list">
                     <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" id="topbar-userdrop" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     <span class="account-user-avatar">
-                        <img src="http://pn-learning-management-system-online.test/uploads/user_image/placeholder.png" alt="user-image" class="rounded-circle">
+                        <img src="uploads/user_image/placeholder.png" alt="user-image" class="rounded-circle">
                     </span>
                     <span style="color: #fff;">
                         <span class="account-user-name">admin admin</span>

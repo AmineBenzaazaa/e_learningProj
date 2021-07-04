@@ -15,7 +15,7 @@
                                         <div class="message-sender-head clearfix">
                                             <div class="message-sender-info d-inline-block">
                                                 <div class="sender-image d-inline-block">
-                                                    <img src="http://pn-learning-management-system-online.test/uploads/user_image/placeholder.png" alt="" class="img-fluid">
+                                                    <img src="uploads/user_image/placeholder.png" alt="" class="img-fluid">
                                                 </div>
                                                 <div class="sender-name d-inline-block">
                                                     admin admin                                                </div>

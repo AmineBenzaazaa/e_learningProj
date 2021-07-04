@@ -3,7 +3,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <p class="copyright-text">
-                            <a href=""><img src="http://pn-learning-management-system-online.test/uploads/system/logo-dark.png" alt="" class="d-inline-block" width="110"></a>
+                            <a href=""><img src="uploads/system/logo-dark.png" alt="" class="d-inline-block" width="110"></a>
                             <a href="http://lms.com/" target="_blank"></a>
                         </p>
                     </div>

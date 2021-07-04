@@ -156,40 +156,40 @@
     </div>
     <!-- all the js files -->
     <!-- bundle -->
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/app.min.js"></script>
+<script src="assets/backend/js/app.min.js"></script>
 <!-- third party js -->
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/Chart.bundle.min.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/jquery.dataTables.min.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/dataTables.bootstrap4.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/dataTables.responsive.min.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/responsive.bootstrap4.min.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/dataTables.buttons.min.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/buttons.bootstrap4.min.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/buttons.html5.min.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/buttons.flash.min.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/buttons.print.min.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/dataTables.keyTable.min.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/dataTables.select.min.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/summernote-bs4.min.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/fullcalendar.min.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/pages/demo.summernote.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/dropzone.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/pages/demo.dashboard.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/pages/datatable-initializer.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/font-awesome-icon-picker/fontawesome-iconpicker.min.js" charset="utf-8"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/bootstrap-tagsinput.min.js" charset="utf-8"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/bootstrap-tagsinput.min.js"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/dropzone.min.js" charset="utf-8"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/ui/component.fileupload.js" charset="utf-8"></script>
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/pages/demo.form-wizard.js"></script>
+<script src="assets/backend/js/vendor/Chart.bundle.min.js"></script>
+<script src="assets/backend/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="assets/backend/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
+<script src="assets/backend/js/vendor/jquery.dataTables.min.js"></script>
+<script src="assets/backend/js/vendor/dataTables.bootstrap4.js"></script>
+<script src="assets/backend/js/vendor/dataTables.responsive.min.js"></script>
+<script src="assets/backend/js/vendor/responsive.bootstrap4.min.js"></script>
+<script src="assets/backend/js/vendor/dataTables.buttons.min.js"></script>
+<script src="assets/backend/js/vendor/buttons.bootstrap4.min.js"></script>
+<script src="assets/backend/js/vendor/buttons.html5.min.js"></script>
+<script src="assets/backend/js/vendor/buttons.flash.min.js"></script>
+<script src="assets/backend/js/vendor/buttons.print.min.js"></script>
+<script src="assets/backend/js/vendor/dataTables.keyTable.min.js"></script>
+<script src="assets/backend/js/vendor/dataTables.select.min.js"></script>
+<script src="assets/backend/js/vendor/summernote-bs4.min.js"></script>
+<script src="assets/backend/js/vendor/fullcalendar.min.js"></script>
+<script src="assets/backend/js/pages/demo.summernote.js"></script>
+<script src="assets/backend/js/vendor/dropzone.js"></script>
+<script src="assets/backend/js/pages/demo.dashboard.js"></script>
+<script src="assets/backend/js/pages/datatable-initializer.js"></script>
+<script src="assets/backend/js/font-awesome-icon-picker/fontawesome-iconpicker.min.js" charset="utf-8"></script>
+<script src="assets/backend/js/vendor/bootstrap-tagsinput.min.js" charset="utf-8"></script>
+<script src="assets/backend/js/bootstrap-tagsinput.min.js"></script>
+<script src="assets/backend/js/vendor/dropzone.min.js" charset="utf-8"></script>
+<script src="assets/backend/js/ui/component.fileupload.js" charset="utf-8"></script>
+<script src="assets/backend/js/pages/demo.form-wizard.js"></script>
 <!-- dragula js-->
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/vendor/dragula.min.js"></script>
+<script src="assets/backend/js/vendor/dragula.min.js"></script>
 <!-- component js -->
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/ui/component.dragula.js"></script>
+<script src="assets/backend/js/ui/component.dragula.js"></script>
 
-<script src="http://pn-learning-management-system-online.test/assets/backend/js/custom.js"></script>
+<script src="assets/backend/js/custom.js"></script>
 
 <!-- Dashboard chart's data is coming from this file -->
 
@@ -368,7 +368,7 @@ function error_required_field() {
 function showAjaxModal(url, header)
 {
     // SHOWING AJAX PRELOADER IMAGE
-    jQuery('#scrollable-modal .modal-body').html('<div style="text-align:center;margin-top:200px;"><img src="http://pn-learning-management-system-online.test/assets/global/bg-pattern-light.svg" /></div>');
+    jQuery('#scrollable-modal .modal-body').html('<div style="text-align:center;margin-top:200px;"><img src="assets/global/bg-pattern-light.svg" /></div>');
     jQuery('#scrollable-modal .modal-title').html('...');
     // LOADING THE AJAX MODAL
     jQuery('#scrollable-modal').modal('show', {backdrop: 'true'});
@@ -386,7 +386,7 @@ function showAjaxModal(url, header)
 function showLargeModal(url, header)
 {
     // SHOWING AJAX PRELOADER IMAGE
-    jQuery('#large-modal .modal-body').html('<div style="text-align:center;margin-top:200px;"><img src="http://pn-learning-management-system-online.test/assets/global/bg-pattern-light.svg" height = "50px" /></div>');
+    jQuery('#large-modal .modal-body').html('<div style="text-align:center;margin-top:200px;"><img src="assets/global/bg-pattern-light.svg" height = "50px" /></div>');
     jQuery('#large-modal .modal-title').html('...');
     // LOADING THE AJAX MODAL
     jQuery('#large-modal').modal('show', {backdrop: 'true'});

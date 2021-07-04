@@ -1,7 +1,7 @@
 <div class="left-side-menu left-side-menu-detached">
 	<div class="leftbar-user">
 		<a href="javascript: void(0);">
-			<img src="http://pn-learning-management-system-online.test/uploads/user_image/placeholder.png" alt="user-image" height="42" class="rounded-circle shadow-sm">
+			<img src="uploads/user_image/placeholder.png" alt="user-image" height="42" class="rounded-circle shadow-sm">
 						<span class="leftbar-user-name">Instructeur</span>
 		</a>
 	</div>
