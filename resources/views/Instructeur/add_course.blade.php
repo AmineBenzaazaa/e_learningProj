@@ -93,24 +93,12 @@
                                                                     <div class="form-group row mb-3">
                                                                         <label class="col-md-2 col-form-label" for="sub_category_id">Category<span class="required">*</span></label>
                                                                         <div class="col-md-10">
-<<<<<<< HEAD
                                                                             <select class="form-control select2 select2-hidden-accessible" data-toggle="select2" name="category" id="sub_category_id" required="" data-select2-id="sub_category_id" tabindex="-1" aria-hidden="true">
                                                                                @foreach($cts as $ct)
                                                                                 <option value="{{$ct->id}}">{{$ct->title}}</option>
                                                                                 @endforeach
                                                                             </select>
                                                                             <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-sub_category_id-container"><span class="select2-selection__rendered" id="select2-sub_category_id-container" role="textbox" aria-readonly="true" title="Select A Category">Select A Category</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-=======
-                                                                            <select class="form-control select2 select2-hidden-accessible" data-toggle="select2" name="sub_category_id" id="sub_category_id" required="" data-select2-id="sub_category_id" tabindex="-1" aria-hidden="true">
-                                                                                <option value="" data-select2-id="2">Select A Category</option>
-                                                                                <optgroup label="Math">
-                                                                                    <option value="2">Algebre</option>
-                                                                                </optgroup>
-                                                                                <optgroup label="Eng">
-                                                                                    <option value="4">Grammer</option>
-                                                                                </optgroup>
-                                                                            </select>
->>>>>>> 33671f358626af4da682cd3efd3ad72120cddc6e
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row mb-3">
