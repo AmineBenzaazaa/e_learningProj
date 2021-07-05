@@ -27,7 +27,7 @@
 
   <!-- font awesome 5 
   <link rel="stylesheet" href="@icon/dripicons/dripicons.css">-->
-  <script src="https://kit.fontawesome.com/7b845e807e.js') }}" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/7b845e807e.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{{ url('/assets/frontend/default/css/fontawesome-all.min.css') }}">
 
   <link rel="stylesheet" href="{{ url('/assets/frontend/default/css/bootstrap.min.css') }}">

@@ -28,13 +28,17 @@
                             <div class="card">
                                 <div class="card-body">
 
-                                    <h4 class="header-title mb-3">Course Adding Form <a href="http://pn-learning-management-system-online.test/user/courses" class="alignToTitle btn btn-outline-secondary btn-rounded btn-sm"> <i class=" mdi mdi-keyboard-backspace"></i> Back To Course List</a>
+                                    <h4 class="header-title mb-3">Course Adding Form <a href="{{url('Instructeur/courses')}}" class="alignToTitle btn btn-outline-secondary btn-rounded btn-sm"> <i class=" mdi mdi-keyboard-backspace"></i> Back To Course List</a>
                                     </h4>
 
                                     <div class="row">
                                         <div class="col-xl-12">
+<<<<<<< HEAD
                                             <form class="required-form" action="{{route('courses.store')}}" method="post" enctype="multipart/form-data">
                                                 @csrf
+=======
+                                            <form class="required-form" action="{{url('Instructeur/add_course')}}" method="post" enctype="multipart/form-data">
+>>>>>>> 33671f358626af4da682cd3efd3ad72120cddc6e
                                                 <div id="basicwizard">
 
                                                     <ul class="nav nav-pills nav-justified form-wizard-header mb-3">
@@ -42,12 +46,6 @@
                                                             <a href="#basic" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2 active">
                                                                 <i class="mdi mdi-fountain-pen-tip mr-1"></i>
                                                                 <span class="d-none d-sm-inline">Basic</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="nav-item">
-                                                            <a href="#curriculum" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                                <i class="mdi mdi-account-circle mr-1"></i>
-                                                                <span class="d-none d-sm-inline">Curriculum</span>
                                                             </a>
                                                         </li>
                                                         <li class="nav-item">
@@ -95,12 +93,24 @@
                                                                     <div class="form-group row mb-3">
                                                                         <label class="col-md-2 col-form-label" for="sub_category_id">Category<span class="required">*</span></label>
                                                                         <div class="col-md-10">
+<<<<<<< HEAD
                                                                             <select class="form-control select2 select2-hidden-accessible" data-toggle="select2" name="category" id="sub_category_id" required="" data-select2-id="sub_category_id" tabindex="-1" aria-hidden="true">
                                                                                @foreach($cts as $ct)
                                                                                 <option value="{{$ct->id}}">{{$ct->title}}</option>
                                                                                 @endforeach
                                                                             </select>
                                                                             <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-sub_category_id-container"><span class="select2-selection__rendered" id="select2-sub_category_id-container" role="textbox" aria-readonly="true" title="Select A Category">Select A Category</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+=======
+                                                                            <select class="form-control select2 select2-hidden-accessible" data-toggle="select2" name="sub_category_id" id="sub_category_id" required="" data-select2-id="sub_category_id" tabindex="-1" aria-hidden="true">
+                                                                                <option value="" data-select2-id="2">Select A Category</option>
+                                                                                <optgroup label="Math">
+                                                                                    <option value="2">Algebre</option>
+                                                                                </optgroup>
+                                                                                <optgroup label="Eng">
+                                                                                    <option value="4">Grammer</option>
+                                                                                </optgroup>
+                                                                            </select>
+>>>>>>> 33671f358626af4da682cd3efd3ad72120cddc6e
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row mb-3">
@@ -110,7 +120,7 @@
                                                                                 <option value="beginner" data-select2-id="4">Beginner</option>
                                                                                 <option value="advanced">Advanced</option>
                                                                                 <option value="intermediate">Intermediate</option>
-                                                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="3" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-level-container"><span class="select2-selection__rendered" id="select2-level-container" role="textbox" aria-readonly="true" title="Beginner">Beginner</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                                            </select>
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row mb-3">
@@ -119,7 +129,7 @@
                                                                             <select class="form-control select2 select2-hidden-accessible" data-toggle="select2" name="language" id="language_made_in" data-select2-id="language_made_in" tabindex="-1" aria-hidden="true">
                                                                                 <option value="bengali" data-select2-id="6">Bengali</option>
                                                                                 <option value="english">English</option>
-                                                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="5" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-language_made_in-container"><span class="select2-selection__rendered" id="select2-language_made_in-container" role="textbox" aria-readonly="true" title="Bengali">Bengali</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                                            </select>
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row mb-3">
@@ -133,34 +143,6 @@
                                                                 </div> <!-- end col -->
                                                             </div> <!-- end row -->
                                                         </div> <!-- end tab pane -->
-                                                        <div class="tab-pane active" id="curriculum">
-                                                            <div class="row justify-content-center">
-                                                                <div class="col-xl-12 mb-4 text-center mt-3">
-                                                                    <a href="javascript::void(0)" class="btn btn-outline-primary btn-rounded btn-sm ml-1" onclick="showAjaxModal('http://pn-learning-management-system-online.test/modal/popup/section_add/1', 'Add New Section')"><i class="mdi mdi-plus"></i> Add Section</a>
-                                                                    <a href="javascript::void(0)" class="btn btn-outline-primary btn-rounded btn-sm ml-1" onclick="showAjaxModal('http://pn-learning-management-system-online.test/modal/popup/lesson_add/1', 'Add New Lesson')"><i class="mdi mdi-plus"></i> Add Lesson</a>
-                                                                    <a href="javascript::void(0)" class="btn btn-outline-primary btn-rounded btn-sm ml-1" onclick="showAjaxModal('http://pn-learning-management-system-online.test/modal/popup/quiz_add/1', 'Add New Quiz')"><i class="mdi mdi-plus"></i> Add Quiz</a>
-                                                                    <a href="javascript::void(0)" class="btn btn-outline-primary btn-rounded btn-sm ml-1" onclick="showLargeModal('http://pn-learning-management-system-online.test/modal/popup/sort_section/1', 'Sort Sections')"><i class="mdi mdi-sort-variant"></i> Sort Sections</a>
-                                                                </div>
-
-                                                                <div class="col-xl-8">
-                                                                    <div class="row">
-                                                                        <div class="col-xl-12">
-                                                                            <div class="card bg-light text-seconday on-hover-action mb-5" id="section-1">
-                                                                                <div class="card-body">
-                                                                                    <h5 class="card-title" style="min-height: 35px;"><span class="font-weight-light">Section 1</span>: P1 <div class="row justify-content-center alignToTitle float-right display-none" id="widgets-of-section-1" style="display: none;">
-                                                                                            <button type="button" class="btn btn-outline-secondary btn-rounded btn-sm" name="button" onclick="showLargeModal('http://pn-learning-management-system-online.test/modal/popup/sort_lesson/1', 'Sort Lessons')"><i class="mdi mdi-sort-variant"></i> Sort Lesson</button>
-                                                                                            <button type="button" class="btn btn-outline-secondary btn-rounded btn-sm ml-1" name="button" onclick="showAjaxModal('http://pn-learning-management-system-online.test/modal/popup/section_edit/1/1', 'Update Section')"><i class="mdi mdi-pencil-outline"></i> Edit Section</button>
-                                                                                            <button type="button" class="btn btn-outline-secondary btn-rounded btn-sm ml-1" name="button" onclick="confirm_modal('http://pn-learning-management-system-online.test/admin/sections/1/delete/1');"><i class="mdi mdi-window-close"></i> Delete Section</button>
-                                                                                        </div>
-                                                                                    </h5>
-                                                                                    <div class="clearfix"></div>
-                                                                                </div> <!-- end card-body-->
-                                                                            </div> <!-- end card-->
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
                                                         <div class="tab-pane" id="requirements">
                                                             <div class="row justify-content-center">
                                                                 <div class="col-xl-8">
@@ -187,14 +169,6 @@
                                                         <div class="tab-pane" id="pricing">
                                                             <div class="row justify-content-center">
                                                                 <div class="col-xl-8">
-                                                                    <div class="form-group row mb-3">
-                                                                        <div class="offset-md-2 col-md-10">
-                                                                            <div class="custom-control custom-checkbox">
-                                                                                <input type="checkbox" class="custom-control-input" name="is_free_course" id="is_free_course" value="1">
-                                                                                <label class="custom-control-label" for="is_free_course">Check If This Is A Free Course</label>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
 
                                                                     <div class="form-group row mb-3">
                                                                         <label class="col-md-2 col-form-label" for="price">Course Price ($)</label>
@@ -204,19 +178,14 @@
                                                                     </div>
 
                                                                     <div class="form-group row mb-3">
-                                                                        <div class="offset-md-2 col-md-10">
-                                                                            <div class="custom-control custom-checkbox">
-                                                                                <input type="checkbox" class="custom-control-input" name="discount_flag" id="discount_flag" value="1">
-                                                                                <label class="custom-control-label" for="discount_flag">Check If This Course Has Discount</label>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="form-group row mb-3">
                                                                         <label class="col-md-2 col-form-label" for="discounted_price">Discounted Price ($)</label>
                                                                         <div class="col-md-10">
+<<<<<<< HEAD
                                                                             <input type="number" class="form-control" name="discount" id="discounted_price" onkeyup="calculateDiscountPercentage(this.value)" min="0">
                                                                             <small class="text-muted">This Course Has <span id="discounted_percentage" class="text-danger">0%</span> Discount</small>
+=======
+                                                                            <input type="number" class="form-control" name="discounted_price" id="discounted_price" onkeyup="calculateDiscountPercentage(this.value)" min="0">
+>>>>>>> 33671f358626af4da682cd3efd3ad72120cddc6e
                                                                         </div>
                                                                     </div>
                                                                 </div> <!-- end col -->
@@ -231,9 +200,8 @@
                                                                         <div class="col-md-10">
                                                                             <select class="form-control select2 select2-hidden-accessible" data-toggle="select2" name="overview_provider" id="course_overview_provider" data-select2-id="course_overview_provider" tabindex="-1" aria-hidden="true">
                                                                                 <option value="youtube" data-select2-id="8">Youtube</option>
-                                                                                <option value="vimeo">Vimeo</option>
                                                                                 <option value="html5">Html5</option>
-                                                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="7" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-course_overview_provider-container"><span class="select2-selection__rendered" id="select2-course_overview_provider-container" role="textbox" aria-readonly="true" title="Youtube">Youtube</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                                            </select>
                                                                         </div>
                                                                     </div>
                                                                 </div> <!-- end col -->

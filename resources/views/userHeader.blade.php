@@ -69,7 +69,7 @@
         <div class="container-fluid">
 
             <!-- LOGO -->
-            <a href="http://pn-learning-management-system-online.test/Admin" class="topnav-logo" style="min-width: unset;">
+            <a href="{{url('/')}}" class="topnav-logo" style="min-width: unset;">
                 <span class="topnav-logo-lg">
                     <img src="{{ url('/uploads/system/logo-light.png') }}" alt="" height="40">
                 </span>
@@ -103,16 +103,22 @@
                         </a>
 
                         <!-- settings-->
-                        <a href="http://pn-learning-management-system-online.test/admin/system_settings" class="dropdown-item notify-item">
+                        <a href="{{url('user/profile')}}" class="dropdown-item notify-item">
                             <i class="mdi mdi-settings mr-1"></i>
                             <span>Settings</span>
                         </a>
                         <!-- Logout-->
                         <form action="{{route('logout')}}" method="post">
                             @csrf
+<<<<<<< HEAD
                             <button type="submit"  class="dropdown-item notify-item">
                             <i class="mdi mdi-logout mr-1"></i>
                             <span>lougout</span>
+=======
+                            <button type="submit" class="dropdown-item notify-item">
+                                <i class="mdi mdi-logout mr-1"></i>
+                                <span>lougout</span>
+>>>>>>> 33671f358626af4da682cd3efd3ad72120cddc6e
                             </button>
                         </form>
                     </div>

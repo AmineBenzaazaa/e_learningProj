@@ -42,9 +42,6 @@ Route::get('admin/courses', function () {
 
 
 
-
-
-
 Route::get('admin/admin_revenue', function () {
   return view('admin/admin_revenue');
 });
