@@ -18,7 +18,7 @@
                                 <div class="card-body">
                                 <h4 class="page-title"> 
                                     <i class="mdi mdi-apple-keyboard-command title_icon"></i> Student                
-                                    <a href="{{url('admin/add_students')}}" class="btn btn-outline-primary btn-rounded alignToTitle">
+                                    <a href="{{route('students.create')}}" class="btn btn-outline-primary btn-rounded alignToTitle">
                                     <i class="mdi mdi-plus"></i>Add Student</a>
                                 </h4>
                                 </div> <!-- end card body-->
@@ -34,32 +34,25 @@
                                 <div class="table-responsive-sm mt-4">
                                     <div id="basic-datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="basic-datatable_length"><label>Show <select name="basic-datatable_length" aria-controls="basic-datatable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="basic-datatable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="basic-datatable"></label></div></div></div><div class="row"><div class="col-sm-12"><div style="position: absolute; height: 1px; width: 0px; overflow: hidden;"><input type="text" tabindex="0"></div><table id="basic-datatable" class="table table-striped table-centered mb-0 dataTable no-footer" role="grid" aria-describedby="basic-datatable_info" style="position: relative;">
                                     <thead>
-                                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="basic-datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending" style="width: 32.3482px;">#</th><th class="sorting" tabindex="0" aria-controls="basic-datatable" rowspan="1" colspan="1" aria-label="Photo: activate to sort column ascending" style="width: 76.125px;">Photo</th><th class="sorting" tabindex="0" aria-controls="basic-datatable" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 111.062px;">Name</th><th class="sorting" tabindex="0" aria-controls="basic-datatable" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending" style="width: 257.804px;">Email</th><th class="sorting" tabindex="0" aria-controls="basic-datatable" rowspan="1" colspan="1" aria-label="Enrolled Courses: activate to sort column ascending" style="width: 176.857px;">Enrolled Courses</th><th class="sorting" tabindex="0" aria-controls="basic-datatable" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 91.1339px;">Actions</th></tr>
+                                        <tr role="row">
+                                        <th class="sorting_asc" tabindex="0" aria-controls="basic-datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending" style="width: 32.3482px;">#</th>
+                                        <th class="sorting" tabindex="0" aria-controls="basic-datatable" rowspan="1" colspan="1" aria-label="Photo: activate to sort column ascending" style="width: 76.125px;">name</th>
+                                        <th class="sorting" tabindex="0" aria-controls="basic-datatable" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 111.062px;">email</th>
+                                        <th class="sorting" tabindex="0" aria-controls="basic-datatable" rowspan="1" colspan="1" aria-label="Enrolled Courses: activate to sort column ascending" style="width: 176.857px;">role</th>
+                                        <th class="sorting" tabindex="0" aria-controls="basic-datatable" rowspan="1" colspan="1" aria-label="Enrolled Courses: activate to sort column ascending" style="width: 176.857px;">date creation</th>
+                                        </tr>
                                     </thead>
-                                    <tbody>
-                                                                    
-                                                            <tr role="row" class="odd">
-                                                <td class="sorting_1">1</td>
-                                                <td>
-                                                    <img src="uploads/user_image/placeholder.png" alt="" height="50" width="50" class="img-fluid rounded-circle img-thumbnail">
-                                                </td>
-                                                <td>Amin Amine</td>
-                                                <td>AmineBenzaza0@gmail.com</td>
-                                                <td>
-                                                ----
-                                                </td>
-                                                <td>
-                                                    <div class="dropright dropright">
-                                                        <button type="button" class="btn btn-sm btn-outline-primary btn-rounded btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <i class="mdi mdi-dots-vertical"></i>
-                                                        </button>
-                                                        <ul class="dropdown-menu">
-                                                            <li><a class="dropdown-item" href="http://pn-learning-management-system-online.test/admin/user_form/edit_user_form/2">Edit</a></li>
-                                                            <li><a class="dropdown-item" href="#" onclick="confirm_modal('http://pn-learning-management-system-online.test/admin/users/delete/2');">Delete</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </td>
-                                            </tr></tbody>
+                                    <tbody>   
+                                    @foreach($users as $donne)                    
+                                        <tr role="row" class="odd">
+                                            <th scope="row">{{$donne->id}}</th>
+                                            <td>{{$donne->name}}</td>
+                                            <td>{{$donne->email}}</td>
+                                            <td>{{$donne->roles->first()['name']}}</td>
+                                            <td>{{$donne->created_at}}</td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
                                 </table></div></div>
                                 <div class="row">
                                     <div class="col-sm-12 col-md-5">

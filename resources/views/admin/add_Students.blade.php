@@ -28,29 +28,27 @@
                                 <div class="col-lg-12" data-select2-id="6">
                                     <h4 class="mb-3 header-title">Students Add Form</h4>
 
-                                    <form class="required-form" action="" method="post"  >
+                                    <form class="required-form" action="{{route('students.index')}}" method="post"  >
                                         @csrf
 
                                         <div class="form-group">
-                                            <label for="title">First Name<span class="required">*</span></label>
-                                            <input type="text" class="form-control" id="title" name="title" required="">
+                                            <label for="name"> Name<span class="required">*</span></label>
+                                            <input type="text" class="form-control" id="name" name="name" required="">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="title">Last Name<span class="required">*</span></label>
-                                            <input type="text" class="form-control" id="title" name="title" required="">
+                                            <label for="email">E-mail<span class="required">*</span></label>
+                                            <input type="email" class="form-control" id="email" name="email" required="">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="title">E-mail<span class="required">*</span></label>
-                                            <input type="text" class="form-control" id="title" name="title" required="">
+                                            <label for="password">Password<span class="required">*</span></label>
+                                            <input type="password" class="form-control" id="password" name="password" required="">
                                         </div>
-
                                         <div class="form-group">
-                                            <label for="title">Password<span class="required">*</span></label>
-                                            <input type="text" class="form-control" id="title" name="title" required="">
+                                            <label for="password_confirmation">Password confirmation<span class="required">*</span></label>
+                                            <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required="">
                                         </div>
-
 
                                         <button type="submit" class="btn btn-primary" >Submit</button>
                                     </form>

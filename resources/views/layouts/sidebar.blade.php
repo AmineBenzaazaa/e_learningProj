@@ -29,7 +29,7 @@
 			</a>
 		</li>
 		<li class="side-nav-item">
-			<a href="{{url('admin/students')}}" class="side-nav-link " aria-expanded="false">
+			<a href="{{route('students.index')}}" class="side-nav-link " aria-expanded="false">
 				<i class="dripicons-user-group"></i>
 				<span>Students</span>
 			</a>

@@ -86,8 +86,8 @@
                             <img src="{{ url('/uploads/user_image/placeholder.png') }}" alt="user-image" class="rounded-circle">
                         </span>
                         <span style="color: #fff;">
-                            <span class="account-user-name">admin admin</span>
-                            <span class="account-position">Admin</span>
+                            <span class="account-user-name">{{auth()->user()->name}}</span>
+                            <span class="account-position">{{auth()->user()->first()['name']}}</span>
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown" aria-labelledby="topbar-userdrop">
@@ -97,7 +97,7 @@
                         </div>
 
                         <!-- Account -->
-                        <a href="{{url('admin/user_profile')}}" class="dropdown-item notify-item">
+                        <a href="{{route('profile.show')}}" class="dropdown-item notify-item">
                             <i class="mdi mdi-account-circle mr-1"></i>
                             <span>My Account</span>
                         </a>
