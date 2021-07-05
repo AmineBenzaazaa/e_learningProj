@@ -69,7 +69,7 @@
         <div class="container-fluid">
 
             <!-- LOGO -->
-            <a href="http://pn-learning-management-system-online.test/Admin" class="topnav-logo" style="min-width: unset;">
+            <a href="{{url('/')}}" class="topnav-logo" style="min-width: unset;">
                 <span class="topnav-logo-lg">
                     <img src="{{ url('/uploads/system/logo-light.png') }}" alt="" height="40">
                 </span>
