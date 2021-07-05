@@ -10,7 +10,14 @@
 		<ul class="metismenu side-nav side-nav-light">
 
 			<li class="side-nav-title side-nav-item">Navigation</li>
-
+			
+			<li class="side-nav-item">
+				<a href="{{url('Instructeur/Dashboard')}}" class="side-nav-link active">
+					<i class="dripicons-archive"></i>
+					<span>Dashboard</span>
+				</a>
+			</li>
+			
 			<li class="side-nav-item">
 				<a href="{{route('courses.index')}}" class="side-nav-link active">
 					<i class="dripicons-archive"></i>

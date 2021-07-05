@@ -33,12 +33,9 @@
 
                                     <div class="row">
                                         <div class="col-xl-12">
-<<<<<<< HEAD
                                             <form class="required-form" action="{{route('courses.store')}}" method="post" enctype="multipart/form-data">
                                                 @csrf
-=======
                                             <form class="required-form" action="{{url('Instructeur/add_course')}}" method="post" enctype="multipart/form-data">
->>>>>>> 33671f358626af4da682cd3efd3ad72120cddc6e
                                                 <div id="basicwizard">
 
                                                     <ul class="nav nav-pills nav-justified form-wizard-header mb-3">
@@ -87,7 +84,7 @@
                                                                     <div class="form-group row mb-3">
                                                                         <label class="col-md-2 col-form-label" for="short_description"> Description</label>
                                                                         <div class="col-md-10">
-                                                                            <textarea name="description" id="short_description" class="form-control"></textarea>
+                                                                            <textarea name="description" id="short_description" class="form-control" required></textarea>
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row mb-3">
@@ -98,7 +95,6 @@
                                                                                 <option value="{{$ct->id}}">{{$ct->title}}</option>
                                                                                 @endforeach
                                                                             </select>
-                                                                            <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-sub_category_id-container"><span class="select2-selection__rendered" id="select2-sub_category_id-container" role="textbox" aria-readonly="true" title="Select A Category">Select A Category</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row mb-3">
@@ -115,17 +111,10 @@
                                                                         <label class="col-md-2 col-form-label" for="language_made_in">Language Made In</label>
                                                                         <div class="col-md-10">
                                                                             <select class="form-control select2 select2-hidden-accessible" data-toggle="select2" name="language" id="language_made_in" data-select2-id="language_made_in" tabindex="-1" aria-hidden="true">
-                                                                                <option value="bengali" data-select2-id="6">Bengali</option>
                                                                                 <option value="english">English</option>
+                                                                                <option value="english">Arabic</option>
+                                                                                <option value="english">Frensh</option>
                                                                             </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group row mb-3">
-                                                                        <div class="offset-md-2 col-md-10">
-                                                                            <div class="custom-control custom-checkbox">
-                                                                                <input type="checkbox" class="custom-control-input" name="is_top_course" id="is_top_course" value="1">
-                                                                                <label class="custom-control-label" for="is_top_course">Check If This Course Is Top Course</label>
-                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div> <!-- end col -->
@@ -144,9 +133,11 @@
                                                                                         <div class="form-group">
                                                                                             <input type="text" class="form-control" name="tags" id="tags" placeholder="Provide tags">
                                                                                         </div>
+                                                                                        <div class="form-group">
+                                                                                            <label>Separate tags with Commas.</label>
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -168,12 +159,7 @@
                                                                     <div class="form-group row mb-3">
                                                                         <label class="col-md-2 col-form-label" for="discounted_price">Discounted Price ($)</label>
                                                                         <div class="col-md-10">
-<<<<<<< HEAD
                                                                             <input type="number" class="form-control" name="discount" id="discounted_price" onkeyup="calculateDiscountPercentage(this.value)" min="0">
-                                                                            <small class="text-muted">This Course Has <span id="discounted_percentage" class="text-danger">0%</span> Discount</small>
-=======
-                                                                            <input type="number" class="form-control" name="discounted_price" id="discounted_price" onkeyup="calculateDiscountPercentage(this.value)" min="0">
->>>>>>> 33671f358626af4da682cd3efd3ad72120cddc6e
                                                                         </div>
                                                                     </div>
                                                                 </div> <!-- end col -->
