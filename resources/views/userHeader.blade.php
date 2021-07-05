@@ -103,17 +103,17 @@
                         </a>
 
                         <!-- settings-->
-                        <a href="http://pn-learning-management-system-online.test/admin/system_settings" class="dropdown-item notify-item">
+                        <a href="{{url('user/profile')}}" class="dropdown-item notify-item">
                             <i class="mdi mdi-settings mr-1"></i>
                             <span>Settings</span>
                         </a>
                         <!-- Logout-->
                         <form action="{{route('logout')}}" method="post">
                             @csrf
-                            <a href="{{ route('logout') }}" class="dropdown-item notify-item">
+                            <button type="submit" class="dropdown-item notify-item">
                                 <i class="mdi mdi-logout mr-1"></i>
                                 <span>lougout</span>
-                            </a>
+                            </button>
                         </form>
                     </div>
                 </li>
