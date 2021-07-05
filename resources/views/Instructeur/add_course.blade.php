@@ -84,7 +84,7 @@
                                                                     <div class="form-group row mb-3">
                                                                         <label class="col-md-2 col-form-label" for="short_description"> Description</label>
                                                                         <div class="col-md-10">
-                                                                            <textarea name="description" id="short_description" class="form-control" required></textarea>
+                                                                            <textarea name="description" id="short_description" class="form-control"></textarea>
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row mb-3">
