@@ -87,7 +87,7 @@
                         </span>
                         <span style="color: #fff;">
                             <span class="account-user-name">{{auth()->user()->name}}</span>
-                            <span class="account-position">{{auth()->user()->first()['name']}}</span>
+                            <span class="account-position">{{auth()->user()->roles->first()['name']}}</span>
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown" aria-labelledby="topbar-userdrop">
@@ -110,11 +110,10 @@
                         <!-- Logout-->
                         <form action="{{route('logout')}}" method="post">
                             @csrf
-                            <button type="submit" class="dropdown-item notify-item">
+                            <a href="{{ route('logout') }}" class="dropdown-item notify-item">
                                 <i class="mdi mdi-logout mr-1"></i>
                                 <span>lougout</span>
-                            </button>
-
+                            </a>
                         </form>
                     </div>
                 </li>
