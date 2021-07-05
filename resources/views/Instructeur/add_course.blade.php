@@ -33,7 +33,8 @@
 
                                     <div class="row">
                                         <div class="col-xl-12">
-                                            <form class="required-form" action="http://pn-learning-management-system-online.test/user/course_actions/add" method="post" enctype="multipart/form-data">
+                                            <form class="required-form" action="{{route('courses.store')}}" method="post" enctype="multipart/form-data">
+                                                @csrf
                                                 <div id="basicwizard">
 
                                                     <ul class="nav nav-pills nav-justified form-wizard-header mb-3">
@@ -88,21 +89,18 @@
                                                                     <div class="form-group row mb-3">
                                                                         <label class="col-md-2 col-form-label" for="short_description"> Description</label>
                                                                         <div class="col-md-10">
-                                                                            <textarea name="short_description" id="short_description" class="form-control"></textarea>
+                                                                            <textarea name="description" id="short_description" class="form-control"></textarea>
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row mb-3">
                                                                         <label class="col-md-2 col-form-label" for="sub_category_id">Category<span class="required">*</span></label>
                                                                         <div class="col-md-10">
-                                                                            <select class="form-control select2 select2-hidden-accessible" data-toggle="select2" name="sub_category_id" id="sub_category_id" required="" data-select2-id="sub_category_id" tabindex="-1" aria-hidden="true">
-                                                                                <option value="" data-select2-id="2">Select A Category</option>
-                                                                                <optgroup label="Math">
-                                                                                    <option value="2">Algebre</option>
-                                                                                </optgroup>
-                                                                                <optgroup label="Eng">
-                                                                                    <option value="4">Grammer</option>
-                                                                                </optgroup>
-                                                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-sub_category_id-container"><span class="select2-selection__rendered" id="select2-sub_category_id-container" role="textbox" aria-readonly="true" title="Select A Category">Select A Category</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                                            <select class="form-control select2 select2-hidden-accessible" data-toggle="select2" name="category" id="sub_category_id" required="" data-select2-id="sub_category_id" tabindex="-1" aria-hidden="true">
+                                                                               @foreach($cts as $ct)
+                                                                                <option value="{{$ct->id}}">{{$ct->title}}</option>
+                                                                                @endforeach
+                                                                            </select>
+                                                                            <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-sub_category_id-container"><span class="select2-selection__rendered" id="select2-sub_category_id-container" role="textbox" aria-readonly="true" title="Select A Category">Select A Category</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row mb-3">
@@ -118,7 +116,7 @@
                                                                     <div class="form-group row mb-3">
                                                                         <label class="col-md-2 col-form-label" for="language_made_in">Language Made In</label>
                                                                         <div class="col-md-10">
-                                                                            <select class="form-control select2 select2-hidden-accessible" data-toggle="select2" name="language_made_in" id="language_made_in" data-select2-id="language_made_in" tabindex="-1" aria-hidden="true">
+                                                                            <select class="form-control select2 select2-hidden-accessible" data-toggle="select2" name="language" id="language_made_in" data-select2-id="language_made_in" tabindex="-1" aria-hidden="true">
                                                                                 <option value="bengali" data-select2-id="6">Bengali</option>
                                                                                 <option value="english">English</option>
                                                                             </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="5" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-language_made_in-container"><span class="select2-selection__rendered" id="select2-language_made_in-container" role="textbox" aria-readonly="true" title="Bengali">Bengali</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
@@ -174,25 +172,11 @@
                                                                                 <div class="d-flex mt-2">
                                                                                     <div class="flex-grow-1 px-3">
                                                                                         <div class="form-group">
-                                                                                            <input type="text" class="form-control" name="tags[]" id="tags" placeholder="Provide tags">
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="">
-                                                                                        <button type="button" class="btn btn-success btn-sm" style="" name="button" onclick="appendRequirement()"> <i class="fa fa-plus"></i> </button>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div id="blank_requirement_field" style="display: none;">
-                                                                                    <div class="d-flex mt-2">
-                                                                                        <div class="flex-grow-1 px-3">
-                                                                                            <div class="form-group">
-                                                                                                <input type="text" class="form-control" name="tags[]" id="tags" placeholder="Provide tags">
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="">
-                                                                                            <button type="button" class="btn btn-danger btn-sm" style="margin-top: 0px;" name="button" onclick="removeRequirement(this)"> <i class="fa fa-minus"></i> </button>
+                                                                                            <input type="text" class="form-control" name="tags" id="tags" placeholder="Provide tags">
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
+                                                                                
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -231,7 +215,7 @@
                                                                     <div class="form-group row mb-3">
                                                                         <label class="col-md-2 col-form-label" for="discounted_price">Discounted Price ($)</label>
                                                                         <div class="col-md-10">
-                                                                            <input type="number" class="form-control" name="discounted_price" id="discounted_price" onkeyup="calculateDiscountPercentage(this.value)" min="0">
+                                                                            <input type="number" class="form-control" name="discount" id="discounted_price" onkeyup="calculateDiscountPercentage(this.value)" min="0">
                                                                             <small class="text-muted">This Course Has <span id="discounted_percentage" class="text-danger">0%</span> Discount</small>
                                                                         </div>
                                                                     </div>
@@ -245,7 +229,7 @@
                                                                     <div class="form-group row mb-3">
                                                                         <label class="col-md-2 col-form-label" for="course_overview_provider">Course Overview Provider</label>
                                                                         <div class="col-md-10">
-                                                                            <select class="form-control select2 select2-hidden-accessible" data-toggle="select2" name="course_overview_provider" id="course_overview_provider" data-select2-id="course_overview_provider" tabindex="-1" aria-hidden="true">
+                                                                            <select class="form-control select2 select2-hidden-accessible" data-toggle="select2" name="overview_provider" id="course_overview_provider" data-select2-id="course_overview_provider" tabindex="-1" aria-hidden="true">
                                                                                 <option value="youtube" data-select2-id="8">Youtube</option>
                                                                                 <option value="vimeo">Vimeo</option>
                                                                                 <option value="html5">Html5</option>
@@ -258,7 +242,7 @@
                                                                     <div class="form-group row mb-3">
                                                                         <label class="col-md-2 col-form-label" for="course_overview_url">Course Overview Url</label>
                                                                         <div class="col-md-10">
-                                                                            <input type="text" class="form-control" name="course_overview_url" id="course_overview_url" placeholder="E.g: https://www.youtube.com/watch?v=oBtf8Yglw2w">
+                                                                            <input type="text" class="form-control" name="overview_url" id="course_overview_url" placeholder="E.g: https://www.youtube.com/watch?v=oBtf8Yglw2w">
                                                                         </div>
                                                                     </div>
                                                                 </div> <!-- end col -->
@@ -272,7 +256,7 @@
                                                                                     <div class="js--image-preview" style="background-image: url(uploads/thumbnails/course_thumbnails/course-thumbnail.png); background-color: #F5F5F5;"></div>
                                                                                     <div class="upload-options">
                                                                                         <label for="course_thumbnail" class="btn"> <i class="mdi mdi-camera"></i> Course Thumbnail <br> <small>(600 X 600)</small> </label>
-                                                                                        <input id="course_thumbnail" style="visibility:hidden;" type="file" class="image-upload" name="course_thumbnail" accept="image/*">
+                                                                                        <input id="course_thumbnail" style="visibility:hidden;" type="file" class="image-upload" name="file" accept="image/*">
                                                                                     </div>
                                                                                 </div>
                                                                             </div>

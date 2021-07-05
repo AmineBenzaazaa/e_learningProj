@@ -18,7 +18,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> Courses
-                                        <a href="{{url('Instructeur/add_course')}}" class="btn btn-outline-primary btn-rounded alignToTitle"><i class="mdi mdi-plus"></i>Add New Course</a>
+                                        <a href="{{route('courses.create')}}" class="btn btn-outline-primary btn-rounded alignToTitle"><i class="mdi mdi-plus"></i>Add New Course</a>
                                     </h4>
                                 </div> <!-- end card body-->
                             </div> <!-- end card -->

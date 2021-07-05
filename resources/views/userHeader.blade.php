@@ -110,10 +110,10 @@
                         <!-- Logout-->
                         <form action="{{route('logout')}}" method="post">
                             @csrf
-                            <a href="{{ route('logout') }}" class="dropdown-item notify-item">
-                                <i class="mdi mdi-logout mr-1"></i>
-                                <span>lougout</span>
-                            </a>
+                            <button type="submit"  class="dropdown-item notify-item">
+                            <i class="mdi mdi-logout mr-1"></i>
+                            <span>lougout</span>
+                            </button>
                         </form>
                     </div>
                 </li>

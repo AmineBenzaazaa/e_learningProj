@@ -19,4 +19,7 @@ class Categorie extends Model
     public function user(){
         return $this->belongsTo(User::class,'user_id','id');
     }
+    public function courses(){
+        return $this->hasMany(Course::class,'category_id');
+    }
 }

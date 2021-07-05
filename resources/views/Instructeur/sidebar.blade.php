@@ -12,7 +12,7 @@
 			<li class="side-nav-title side-nav-item">Navigation</li>
 
 			<li class="side-nav-item">
-				<a href="{{url('Instructeur/courses')}}" class="side-nav-link active">
+				<a href="{{route('courses.index')}}" class="side-nav-link active">
 					<i class="dripicons-archive"></i>
 					<span>Courses</span>
 				</a>

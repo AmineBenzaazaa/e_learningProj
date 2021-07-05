@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\CourseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +35,7 @@ Route::get('/', function () {
 
  Route::resource('categories',CategorieController::class);
  Route::resource('students',StudentController::class);
+ Route::resource('courses',CourseController::class);
 Route::get('admin/courses', function () {
   return view('admin/courses');
 });
