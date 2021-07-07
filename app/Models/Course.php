@@ -21,6 +21,7 @@ class Course extends Model
         'overview_url',
         'thumbnail',
         'user_id',
+        'status',
     ];
     
     public function user(){

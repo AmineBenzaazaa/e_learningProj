@@ -159,32 +159,48 @@
                                 <div class="table-responsive-sm mt-4">
                                                         <div id="course-datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="course-datatable_length"><label>Show <select name="course-datatable_length" aria-controls="course-datatable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="course-datatable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="course-datatable"></label></div></div></div><div class="row"><div class="col-sm-12"><div style="position: absolute; height: 1px; width: 0px; overflow: hidden;"><input type="text" tabindex="0"></div><table id="course-datatable" class="table table-striped dt-responsive nowrap dataTable no-footer dtr-inline" width="100%" data-page-length="25" role="grid" aria-describedby="course-datatable_info" style="width: 100%; position: relative;">
                                             <thead>
-                                                <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 16.8px;" aria-sort="ascending" aria-label="#: activate to sort column descending">#</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 138.8px;" aria-label="Title: activate to sort column ascending">Title</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 74.8px;" aria-label="Category: activate to sort column ascending">Category</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 133.8px;" aria-label="Lesson &amp;amp; Section: activate to sort column ascending">Lesson &amp; Section</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 130.8px;" aria-label="Enrolled Student: activate to sort column ascending">Enrolled Student</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 54.8px;" aria-label="Status: activate to sort column ascending">Status</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 44.8px;" aria-label="Price: activate to sort column ascending">Price</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 62.8px;" aria-label="Actions: activate to sort column ascending">Actions</th></tr>
+                                                <tr role="row">
+                                                    <th class="sorting_asc" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 16.8px;" aria-sort="ascending" aria-label="#: activate to sort column descending">#</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 138.8px;" aria-label="Title: activate to sort column ascending">Title</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 74.8px;" aria-label="Category: activate to sort column ascending">Category</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 133.8px;" aria-label="Lesson &amp;amp; Section: activate to sort column ascending">level</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 130.8px;" aria-label="Enrolled Student: activate to sort column ascending">language</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 44.8px;" aria-label="Price: activate to sort column ascending">Price</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 133.8px;" aria-label="Lesson &amp;amp; Section: activate to sort column ascending">discount</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 130.8px;" aria-label="Enrolled Student: activate to sort column ascending">overview provider</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 54.8px;" aria-label="Status: activate to sort column ascending">Status</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 62.8px;" aria-label="Actions: activate to sort column ascending">Actions</th>
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                                                                
-                                                                        <tr role="row" class="odd">
-                                                        <td tabindex="0" class="sorting_1">1</td>
+                                            @foreach($cts as $ct)                       
+                                                        <tr role="row" class="odd">
+                                                        <td tabindex="0" class="sorting_1">{{$ct->id}}</td>
                                                         <td>
-                                                            <strong><a href="http://pn-learning-management-system-online.test/admin/course_form/course_edit/1">Algebre</a></strong><br>
-                                                            <small class="text-muted">Instructor: <b>admin admin</b></small>
+                                                        <span class="badge badge-dark-lighten">{{$ct->title}}</span>
+                                                            <small class="text-muted">{{auth()->user()->name}} </small>
                                                         </td>
                                                         <td>
-                                                            <span class="badge badge-dark-lighten">Algebre</span>
-                                                        </td>
-                                                        <td>
-                                                            <small class="text-muted"><b>Total Section</b>: 1</small><br>
-                                                            <small class="text-muted"><b>Total Lesson</b>: 0</small><br>
-                                                        </td>
-                                                        <td>
-                                                            <small class="text-muted"><b>Total Enrolment</b>: 0</small>
+                                                        <span class="badge badge-dark-lighten">{{$ct->category->title}}</span>
                                                         </td>
                                                         <td class="text-center">
-                                                                                                        <i class="mdi mdi-circle" style="color: #FFC107; font-size: 19px;" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pending"></i>
-                                                                                                </td>
+                                                        <span class="badge badge-dark-lighten">{{$ct->level}}</span>
+                                                        </td>
                                                         <td>
-                                                                                                                                                        <span class="badge badge-dark-lighten">$25</span>
-                                                                                                                                            </td>
+                                                        <span class="badge badge-dark-lighten">{{$ct->language}}</span>
+                                                        </td>
+                                                        <td>
+                                                        <span class="badge badge-dark-lighten">{{$ct->price}}</span>
+                                                        </td>
+                                                        <td class="text-center">
+                                                        <span class="badge badge-dark-lighten">{{$ct->discount}}</span>
+                                                        </td>
+                                                        <td>
+                                                        <span class="badge badge-dark-lighten">{{$ct->overview_provider}}</span>
+                                                        </td>
+                                                        <td>
+                                                        <span class="badge badge-dark-lighten">{{$ct->status}}</span>
+                                                        </td>
                                                         <td>
                                                             <div class="dropright dropright">
                                                             <button type="button" class="btn btn-sm btn-outline-primary btn-rounded btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -199,7 +215,9 @@
                                                             </ul>
                                                         </div>
                                                         </td>
-                                                    </tr></tbody>
+                                                    </tr>
+                                                    @endforeach
+                                                    </tbody>
                                         </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="course-datatable_info" role="status" aria-live="polite">Showing 1 to 1 of 1 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="course-datatable_paginate"><ul class="pagination pagination-rounded"><li class="paginate_button page-item previous disabled" id="course-datatable_previous"><a href="#" aria-controls="course-datatable" data-dt-idx="0" tabindex="0" class="page-link"><i class="mdi mdi-chevron-left"></i></a></li><li class="paginate_button page-item active"><a href="#" aria-controls="course-datatable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="course-datatable_next"><a href="#" aria-controls="course-datatable" data-dt-idx="2" tabindex="0" class="page-link"><i class="mdi mdi-chevron-right"></i></a></li></ul></div></div></div></div>
                                                                 </div>
                             </div>

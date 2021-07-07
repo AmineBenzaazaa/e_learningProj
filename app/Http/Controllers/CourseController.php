@@ -58,6 +58,7 @@ class CourseController extends Controller
             'overview_provider'=>$request->overview_provider,
             'overview_url'=>$request->overview_url,
             'thumbnail'=>$vrai,
+            'status'=>"pending",
             'user_id'=>auth()->user()->id,
         ]);
         return redirect(route('courses.index'));
