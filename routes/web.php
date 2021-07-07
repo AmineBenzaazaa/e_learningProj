@@ -16,26 +16,26 @@ use App\Http\Controllers\CourseController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
 
- Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-   $user=auth()->user();
-   if($user->hasRole('instructeur')){
-      return view('instructeur/dashboard');
-   }
-   if($user->hasRole('admin')){
-      return view('dash');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+  $user = auth()->user();
+  if ($user->hasRole('instructeur')) {
+    return view('instructeur/dashboard');
   }
-  if($user->hasRole('etudiant')){
+  if ($user->hasRole('admin')) {
+    return view('dash');
+  }
+  if ($user->hasRole('etudiant')) {
     return view('welcome');
-}
- })->name('dashboard');
- 
+  }
+})->name('dashboard');
 
- Route::resource('categories',CategorieController::class);
- Route::resource('students',StudentController::class);
- Route::resource('courses',CourseController::class);
+
+Route::resource('categories', CategorieController::class);
+Route::resource('students', StudentController::class);
+Route::resource('courses', CourseController::class);
 Route::get('admin/courses', function () {
   return view('admin/courses');
 });
@@ -90,3 +90,6 @@ Route::get('Etudiant/user_profile', function () {
   return view('Etudiant/user_profile');
 });
 
+Route::get('Etudiant/user_profile', function () {
+  return view('/');
+});

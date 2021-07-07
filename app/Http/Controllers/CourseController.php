@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Course;
 use App\Models\Categorie;
 use Illuminate\Http\Request;
@@ -14,8 +15,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $cts=Course::get();
-        return view('instructeur/courses')->with('cts',$cts);
+        $cts = Course::get();
+        return view('instructeur/courses')->with('cts', $cts);
     }
 
     /**
@@ -25,9 +26,11 @@ class CourseController extends Controller
      */
     public function create()
     {
-        $cts=Categorie::get();
-        return view('instructeur/add_course')->with('cts',$cts);
+        $cts = Categorie::get();
+        return view('instructeur/add_course')->with('cts', $cts);
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -37,29 +40,28 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->hasFile('file')){
-            $file=$request->file;
-            $new_file=time().$request->id.$file->GetClientOriginalName();
-            $file->move('storage/'.auth()->user()->id.'/image',$new_file);
-            $vrai='storage/'.auth()->user()->id.'/image/'.$new_file;
+        if ($request->hasFile('file')) {
+            $file = $request->file;
+            $new_file = time() . $request->id . $file->GetClientOriginalName();
+            $file->move('storage/' . auth()->user()->id . '/image', $new_file);
+            $vrai = 'storage/' . auth()->user()->id . '/image/' . $new_file;
+        } else {
+            $vrai = "";
         }
-        else{
-            $vrai="";
-        }
-        $course=Course::Create([
-            'title'=>$request->title,
-            'description'=>$request->description,
-            'category_id'=>$request->category,
-            'level'=>$request->level,
-            'language'=>$request->language,
-            'price'=>$request->price,
-            'discount'=>$request->discount,
-            'tags'=>$request->tags,
-            'overview_provider'=>$request->overview_provider,
-            'overview_url'=>$request->overview_url,
-            'thumbnail'=>$vrai,
-            'status'=>"pending",
-            'user_id'=>auth()->user()->id,
+        $course = Course::Create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'category_id' => $request->category,
+            'level' => $request->level,
+            'language' => $request->language,
+            'price' => $request->price,
+            'discount' => $request->discount,
+            'tags' => $request->tags,
+            'overview_provider' => $request->overview_provider,
+            'overview_url' => $request->overview_url,
+            'thumbnail' => $vrai,
+            'status' => "pending",
+            'user_id' => auth()->user()->id,
         ]);
         return redirect(route('courses.index'));
     }
@@ -83,7 +85,8 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cts = Categorie::get();
+        return view('instructeur/edit_course')->with('cts', $cts);
     }
 
     /**
