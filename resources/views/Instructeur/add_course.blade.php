@@ -28,7 +28,7 @@
                             <div class="card">
                                 <div class="card-body">
 
-                                    <h4 class="header-title mb-3">Course Adding Form <a href="{{url('Instructeur/courses')}}" class="alignToTitle btn btn-outline-secondary btn-rounded btn-sm"> <i class=" mdi mdi-keyboard-backspace"></i> Back To Course List</a>
+                                    <h4 class="header-title mb-3">Course Adding Form <a href="{{route('courses.index')}}" class="alignToTitle btn btn-outline-secondary btn-rounded btn-sm"> <i class=" mdi mdi-keyboard-backspace"></i> Back To Course List</a>
                                     </h4>
 
                                     <div class="row">
