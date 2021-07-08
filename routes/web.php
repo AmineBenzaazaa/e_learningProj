@@ -97,3 +97,10 @@ Route::get('Etudiant/user_profile', function () {
 Route::get('Etudiant/user_profile', function () {
   return view('/');
 });
+Route::get('home/cours', function () {
+  return view('coursPage');
+});
+
+Route::get('home/cart', function () {
+  return view('addtocart');
+});
