@@ -83,8 +83,10 @@
                                                         <div class="tab-pane active" id="curriculum">
                                                             <div class="row justify-content-center">
                                                                 <div class="col-xl-12 mb-4 text-center mt-3">
-                                                                    <a href="javascript::void(0)" class="btn btn-outline-primary btn-rounded btn-sm ml-1" onclick="showAjaxModal('http://xxpn-learning-management-system-online.test/modal/popup/section_add/1', 'Add New Section')"><i class="mdi mdi-plus"></i> Add Section</a>
-                                                                    <a href="javascript::void(0)" class="btn btn-outline-primary btn-rounded btn-sm ml-1" onclick="showAjaxModal('http://xxpn-learning-management-system-online.test/modal/popup/lesson_add/1', 'Add New Lesson')"><i class="mdi mdi-plus"></i> Add Lesson</a>
+                                                                    <!-- Button to Open the Modal -->
+                                                                    <a type="button" class="btn btn-outline-primary btn-rounded btn-sm ml-1" data-toggle="modal" data-target="#addsection"><i class="mdi mdi-plus"></i> Add Section</a>
+
+                                                                    <a type="button" class="btn btn-outline-primary btn-rounded btn-sm ml-1" data-toggle="modal" data-target="#addlesson"><i class="mdi mdi-plus"></i> Add Lesson</a>
                                                                 </div>
 
                                                                 <div class="col-xl-8">
@@ -92,9 +94,9 @@
                                                                         <div class="col-xl-12">
                                                                             <div class="card bg-light text-seconday on-hover-action mb-5" id="section-1">
                                                                                 <div class="card-body">
-                                                                                    <h5 class="card-title" style="min-height: 35px;"><span class="font-weight-light">Section 1</span>: section1 <div class="row justify-content-center alignToTitle float-right display-none" id="widgets-of-section-1" style="display: none;">
-                                                                                            <button type="button" class="btn btn-outline-secondary btn-rounded btn-sm ml-1" name="button" onclick="showAjaxModal('http://xxpn-learning-management-system-online.test/modal/popup/section_edit/1/1', 'Update Section')"><i class="mdi mdi-pencil-outline"></i> Edit Section</button>
-                                                                                            <button type="button" class="btn btn-outline-secondary btn-rounded btn-sm ml-1" name="button" onclick="confirm_modal('http://xxpn-learning-management-system-online.test/admin/sections/1/delete/1');"><i class="mdi mdi-window-close"></i> Delete Section</button>
+                                                                                    <h5 class="card-title" style="min-height: 35px;"><span class="font-weight-light">Section 1</span>: section1 <div class="row justify-content-center alignToTitle float-right display-block" id="widgets-of-section-1" style="display: block;">
+                                                                                            <button type="button" class="btn btn-outline-secondary btn-rounded btn-sm ml-1 display-block" name="button" data-toggle="modal" data-target="#editmodal"><i class="mdi mdi-pencil-outline"></i> Edit Section</button>
+                                                                                            <button type="button" class="btn btn-outline-secondary btn-rounded btn-sm ml-1 display-block" name="button" data-toggle="modal" data-target="#deletemodal"><i class="mdi mdi-window-close"></i> Delete Section</button>
                                                                                         </div>
                                                                                     </h5>
                                                                                     <div class="clearfix"></div>
@@ -102,9 +104,9 @@
                                                                                         <!-- Portlet card -->
                                                                                         <div class="card text-secondary on-hover-action mb-2" id="lesson-1">
                                                                                             <div class="card-body thinner-card-body">
-                                                                                                <div class="card-widgets display-none" id="widgets-of-lesson-1" style="display: none;">
-                                                                                                    <a href="javascript::" onclick="showAjaxModal('http://xxpn-learning-management-system-online.test/modal/popup/lesson_edit/1/1', 'Update Lesson')"><i class="mdi mdi-pencil-outline"></i></a>
-                                                                                                    <a href="javascript::" onclick="confirm_modal('http://xxpn-learning-management-system-online.test/admin/lessons/1/delete/1');"><i class="mdi mdi-window-close"></i></a>
+                                                                                                <div class="card-widgets display-block" id="widgets-of-lesson-1" style="display: block;">
+                                                                                                    <a data-toggle="modal" data-target="#editlesson"><i class="mdi mdi-pencil-outline"></i></a>
+                                                                                                    <a data-toggle="modal" data-target="#deletelesson"><i class="mdi mdi-window-close"></i></a>
                                                                                                 </div>
                                                                                                 <h5 class="card-title mb-0">
                                                                                                     <span class="font-weight-light">
@@ -364,4 +366,224 @@
                     </script>
                     <!-- END PLACE PAGE CONTENT HERE -->
                 </div>
+            </div>
+
+            <!-- The Modal -->
+            <div class="modal" id="addsection">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title"> Add Section </h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body ml-2 mr-2">
+                            <form action=" " method="post">
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input class="form-control" type="text" name="title" id="title" required="">
+                                    <small class="text-muted">Provide A Section Name</small>
+                                </div>
+
+                            </form>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer mx-auto">
+                            <div class="text-left">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                            <div class="text-right">
+                                <button class="btn btn-success" type="submit" name="button">Submit</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="addlesson">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title"> Add Lesson </h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="modal-body ml-2 mr-2">
+                                <form action="http://xxpn-learning-management-system-online.test/admin/lessons/1/add" method="post" enctype="multipart/form-data">
+
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input type="text" name="title" class="form-control" required="">
+                                    </div>
+
+                                    <input type="hidden" name="course_id" value="1">
+
+                                    <div class="form-group">
+                                        <label for="section_id">Section</label>
+                                        <select class="form-control select2" data-toggle="select2" name="section_id" id="section_id" required="" data-select2-id="section_id" tabindex="-1" aria-hidden="true">
+                                            <option value="1" data-select2-id="10">section1</option>
+                                            <option value="2">section2</option>
+                                            <option value="3">Lorem Ipsum</option>
+                                        </select>
+                                    </div>
+
+
+
+                                    <div class="" id="other">
+                                        <div class="form-group">
+                                            <label> Add video </label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="attachment" name="attachment" onchange="changeTitleOfImageUploader(this)">
+                                                    <label class="custom-file-label" for="attachment">Attachment</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Summary</label>
+                                        <textarea name="summary" class="form-control"></textarea>
+                                    </div>
+
+
+                                </form>
+                                <script type="text/javascript">
+                                    $(document).ready(function() {
+                                        initSelect2(['#section_id', '#lesson_type', '#lesson_provider']);
+                                        initTimepicker();
+                                    });
+
+                                    function ajax_get_video_details(video_url) {
+                                        $('#perloader').show();
+                                        if (checkURLValidity(video_url)) {
+                                            $.ajax({
+                                                url: 'http://xxpn-learning-management-system-online.test/admin/ajax_get_video_details',
+                                                type: 'POST',
+                                                data: {
+                                                    video_url: video_url
+                                                },
+                                                success: function(response) {
+                                                    jQuery('#duration').val(response);
+                                                    $('#perloader').hide();
+                                                    $('#invalid_url').hide();
+                                                }
+                                            });
+                                        } else {
+                                            $('#invalid_url').show();
+                                            $('#perloader').hide();
+                                            jQuery('#duration').val('');
+
+                                        }
+                                    }
+
+                                    function checkURLValidity(video_url) {
+                                        var youtubePregMatch = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+                                        var vimeoPregMatch = /^(http\:\/\/|https\:\/\/)?(www\.)?(vimeo\.com\/)([0-9]+)$/;
+                                        if (video_url.match(youtubePregMatch)) {
+                                            return true;
+                                        } else if (vimeoPregMatch.test(video_url)) {
+                                            return true;
+                                        } else {
+                                            return false;
+                                        }
+                                    }
+
+                                    function show_lesson_type_form(param) {
+                                        var checker = param.split('-');
+                                        var lesson_type = checker[0];
+                                        if (lesson_type === "video") {
+                                            $('#other').hide();
+                                            $('#video').show();
+                                        } else if (lesson_type === "other") {
+                                            $('#video').hide();
+                                            $('#other').show();
+                                        } else {
+                                            $('#video').hide();
+                                            $('#other').hide();
+                                        }
+                                    }
+
+                                    function check_video_provider(provider) {
+                                        if (provider === 'youtube' || provider === 'vimeo') {
+                                            $('#html5').hide();
+                                            $('#youtube_vimeo').show();
+                                        } else if (provider === 'html5') {
+                                            $('#youtube_vimeo').hide();
+                                            $('#html5').show();
+                                        } else {
+                                            $('#youtube_vimeo').hide();
+                                            $('#html5').hide();
+                                        }
+                                    }
+                                </script>
+                            </div>
+
+
+
+
+                        </div>
+
+                        <!-- Modal footer -->
+
+                        <div class="modal-footer mx-auto">
+                            <div class="text-left">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                            <div class="text-right">
+                                <button class="btn btn-success" type="submit" name="button">Add Lesson</button>
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal" id="deletemodal">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-body p-4">
+                            <div class="text-center">
+                                <i class="dripicons-information h1 text-info"></i>
+                                <h4 class="mt-2">Heads Up!</h4>
+                                <p class="mt-3">Are You Sure u want to delete This Section?</p>
+                                <button type="button" class="btn btn-info my-2" data-dismiss="modal">Cancel</button>
+                                <a href="" id="update_link" class="btn btn-danger my-2">Delete Section</a>
+                            </div>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div>
+
+
+
+            <div class="modal" id="deletelesson">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-body p-4">
+                            <div class="text-center">
+                                <i class="dripicons-information h1 text-info"></i>
+                                <h4 class="mt-2">Heads Up!</h4>
+                                <p class="mt-3">Are You Sure u want to delete This Lesson?</p>
+                                <button type="button" class="btn btn-info my-2" data-dismiss="modal">Cancel</button>
+                                <a href="" id="update_link" class="btn btn-danger my-2">Delete Lesson</a>
+                            </div>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
             </div>
