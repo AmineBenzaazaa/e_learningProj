@@ -93,8 +93,9 @@
                                                                     <div class="row">
                                                                         <div class="col-xl-12">
                                                                             <div class="card bg-light text-seconday on-hover-action mb-5" id="section-1">
+                                                                                @foreach($sec as $section)
                                                                                 <div class="card-body">
-                                                                                    <h5 class="card-title" style="min-height: 35px;"><span class="font-weight-light">Section 1</span>: section1 <div class="row justify-content-center alignToTitle float-right display-block" id="widgets-of-section-1" style="display: block;">
+                                                                                    <h5 class="card-title" style="min-height: 35px;"><span class="font-weight-light">Section {{$section->id}}</span>: {{$section->title}} <div class="row justify-content-center alignToTitle float-right display-block" id="widgets-of-section-1" style="display: block;">
                                                                                             <button type="button" class="btn btn-outline-secondary btn-rounded btn-sm ml-1 display-block" name="button" data-toggle="modal" data-target="#editmodal"><i class="mdi mdi-pencil-outline"></i> Edit Section</button>
                                                                                             <button type="button" class="btn btn-outline-secondary btn-rounded btn-sm ml-1 display-block" name="button" data-toggle="modal" data-target="#deletemodal"><i class="mdi mdi-window-close"></i> Delete Section</button>
                                                                                         </div>
@@ -103,6 +104,27 @@
                                                                                     <div class="col-md-12">
                                                                                         <!-- Portlet card -->
                                                                                         <div class="card text-secondary on-hover-action mb-2" id="lesson-1">
+                                                                                            @foreach($section->lessons as $ls)
+                                                                                            <div class="modal" id="deletelesson">
+                                                                                            <div class="modal-dialog modal-sm">
+                                                                                                <div class="modal-content">
+                                                                                                    <div class="modal-body p-4">
+                                                                                                        <div class="text-center">
+                                                                                                            <i class="dripicons-information h1 text-info"></i>
+                                                                                                            <h4 class="mt-2">Heads Up!</h4>
+                                                                                                            <p class="mt-3">Are You Sure u want to delete This Lesson?</p>
+                                                                                                            <button type="button" class="btn btn-info my-2" data-dismiss="modal">Cancel</button>
+                                                                                                            <form action="{{route('lessons.destroy',$ls->id)}}" method="POST">
+                                                                                                            @csrf
+                                                                                                            @method('DELETE')
+                                                                                                            <input type="submit" class="btn btn-danger my-2" value="Delete">
+                                                                                                            <button type="submit"  class="btn btn-danger my-2">Delete Lesson</button>
+                                                                                                            </form>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div><!-- /.modal-content -->
+                                                                                            </div><!-- /.modal-dialog -->
+                                                                                        </div>
                                                                                             <div class="card-body thinner-card-body">
                                                                                                 <div class="card-widgets display-block" id="widgets-of-lesson-1" style="display: block;">
                                                                                                     <a data-toggle="modal" data-target="#editlesson"><i class="mdi mdi-pencil-outline"></i></a>
@@ -111,12 +133,14 @@
                                                                                                 <h5 class="card-title mb-0">
                                                                                                     <span class="font-weight-light">
                                                                                                         <img src="http://xxpn-learning-management-system-online.test/assets/backend/lesson_icon/img.png" alt="" height="16">
-                                                                                                        Lesson 1 </span>: Lorem Ipsum\
+                                                                                                        Lesson {{$ls->id}} </span>: {{$ls->title}}
                                                                                                 </h5>
                                                                                             </div>
+                                                                                            @endforeach
                                                                                         </div> <!-- end card-->
                                                                                     </div>
                                                                                 </div> <!-- end card-body-->
+                                                                                @endforeach
                                                                             </div> <!-- end card-->
                                                                         </div>
 
@@ -372,36 +396,35 @@
             <div class="modal" id="addsection">
                 <div class="modal-dialog">
                     <div class="modal-content">
+                        <form action="{{route('sections.store')}}" method="post">
+                        @csrf
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title"> Add Section </h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
 
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <h4 class="modal-title"> Add Section </h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-
-                        <!-- Modal body -->
-                        <div class="modal-body ml-2 mr-2">
-                            <form action=" " method="post">
-                                <div class="form-group">
-                                    <label for="title">Title</label>
-                                    <input class="form-control" type="text" name="title" id="title" required="">
-                                    <small class="text-muted">Provide A Section Name</small>
+                            <!-- Modal body -->
+                            <div class="modal-body ml-2 mr-2">
+                                
+                                    <div class="form-group">
+                                        <label for="title">Title</label>
+                                        <input class="form-control" type="text" name="title" id="title" required="">
+                                        <input type="hidden" name="id" value="{{$crs->id}}">
+                                        <small class="text-muted">Provide A Section Name</small>
+                                    </div>
+                                
+                            </div>
+                             <!-- Modal footer -->
+                            <div class="modal-footer mx-auto">
+                                <div class="text-left">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                                 </div>
-
-                            </form>
-                        </div>
-                        <!-- Modal footer -->
-                        <div class="modal-footer mx-auto">
-                            <div class="text-left">
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                <div class="text-right">
+                                    <button class="btn btn-success" type="submit" name="button">Submit</button>
+                                </div>
                             </div>
-                            <div class="text-right">
-                                <button class="btn btn-success" type="submit" name="button">Submit</button>
-                            </div>
-
-
-                        </div>
-
+                        </form>
                     </div>
                 </div>
             </div>
@@ -409,7 +432,8 @@
             <div class="modal" id="addlesson">
                 <div class="modal-dialog">
                     <div class="modal-content">
-
+                    <form action="{{route('lessons.store')}}" method="post" enctype="multipart/form-data">
+                    @csrf
                         <!-- Modal Header -->
                         <div class="modal-header">
                             <h4 class="modal-title"> Add Lesson </h4>
@@ -419,26 +443,20 @@
                         <!-- Modal body -->
                         <div class="modal-body">
                             <div class="modal-body ml-2 mr-2">
-                                <form action="http://xxpn-learning-management-system-online.test/admin/lessons/1/add" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="id" value="{{$crs->id}}">
 
                                     <div class="form-group">
                                         <label>Title</label>
                                         <input type="text" name="title" class="form-control" required="">
                                     </div>
-
-                                    <input type="hidden" name="course_id" value="1">
-
                                     <div class="form-group">
                                         <label for="section_id">Section</label>
                                         <select class="form-control select2" data-toggle="select2" name="section_id" id="section_id" required="" data-select2-id="section_id" tabindex="-1" aria-hidden="true">
-                                            <option value="1" data-select2-id="10">section1</option>
-                                            <option value="2">section2</option>
-                                            <option value="3">Lorem Ipsum</option>
+                                            @foreach($sec as $v)
+                                            <option value="{{$v->id}}">{{$v->title}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
-
-
-
                                     <div class="" id="other">
                                         <div class="form-group">
                                             <label> Add video </label>
@@ -450,14 +468,11 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="form-group">
                                         <label>Summary</label>
                                         <textarea name="summary" class="form-control"></textarea>
                                     </div>
-
-
-                                </form>
+                                
                                 <script type="text/javascript">
                                     $(document).ready(function() {
                                         initSelect2(['#section_id', '#lesson_type', '#lesson_provider']);
@@ -528,14 +543,8 @@
                                     }
                                 </script>
                             </div>
-
-
-
-
                         </div>
-
                         <!-- Modal footer -->
-
                         <div class="modal-footer mx-auto">
                             <div class="text-left">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -543,12 +552,8 @@
                             <div class="text-right">
                                 <button class="btn btn-success" type="submit" name="button">Add Lesson</button>
                             </div>
-
-
-
-
                         </div>
-
+                        </form>
                     </div>
                 </div>
             </div>
@@ -572,18 +577,4 @@
 
 
 
-            <div class="modal" id="deletelesson">
-                <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-body p-4">
-                            <div class="text-center">
-                                <i class="dripicons-information h1 text-info"></i>
-                                <h4 class="mt-2">Heads Up!</h4>
-                                <p class="mt-3">Are You Sure u want to delete This Lesson?</p>
-                                <button type="button" class="btn btn-info my-2" data-dismiss="modal">Cancel</button>
-                                <a href="" id="update_link" class="btn btn-danger my-2">Delete Lesson</a>
-                            </div>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div>
+            

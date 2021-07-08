@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\SectionController;
+use App\Http\Controllers\LessonController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +36,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 
 Route::resource('categories', CategorieController::class);
+Route::resource('sections', SectionController::class);
+Route::resource('lessons', LessonController::class);
 Route::resource('students', StudentController::class);
 Route::resource('courses', CourseController::class);
 Route::get('admin/courses', function () {

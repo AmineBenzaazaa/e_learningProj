@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\Categorie;
+use App\Models\Section;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -86,7 +87,9 @@ class CourseController extends Controller
     public function edit($id)
     {
         $cts = Categorie::get();
-        return view('instructeur/edit_course')->with('cts', $cts);
+        $crs = Course::where('id',$id)->first();
+        $sec = Section::where('course_id',$id)->get();
+        return view('instructeur/edit_course')->with('cts', $cts)->with('crs',$crs)->with('sec',$sec);
     }
 
     /**

@@ -30,7 +30,7 @@ class Course extends Model
     public function category(){
         return $this->belongsTo(Categorie::class,'category_id','id');
     }
-    public function categories(){
+    public function courses(){
         return $this->hasMany(Section::class,'course_id');
     }
 }
