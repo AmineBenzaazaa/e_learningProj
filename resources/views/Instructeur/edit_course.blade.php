@@ -33,7 +33,6 @@
 
                                     <div class="row">
                                         <div class="col-xl-12">
-                                            <form class="required-form" action="http://xxpn-learning-management-system-online.test/admin/course_actions/edit/1" method="post" enctype="multipart/form-data">
                                                 <div id="basicwizard">
                                                     <ul class="nav nav-pills nav-justified form-wizard-header mb-3">
                                                         <li class="nav-item">
@@ -94,6 +93,25 @@
                                                                         <div class="col-xl-12">
                                                                             <div class="card bg-light text-seconday on-hover-action mb-5" id="section-1">
                                                                                 @foreach($sec as $section)
+                                                                                <div class="modal" id="deletemodal">
+                                                                                    <div class="modal-dialog modal-sm">
+                                                                                        <div class="modal-content">
+                                                                                            <div class="modal-body p-4">
+                                                                                                <div class="text-center">
+                                                                                                    <i class="dripicons-information h1 text-info"></i>
+                                                                                                    <h4 class="mt-2">Heads Up!</h4>
+                                                                                                    <p class="mt-3">Are You Sure u want to delete This Section?</p>
+                                                                                                    <button type="button" class="btn btn-info my-2" data-dismiss="modal">Cancel</button>
+                                                                                                    <form action="{{route('sections.destroy',$section->id)}}" method="POST">
+                                                                                                    @csrf
+                                                                                                    @method('DELETE')
+                                                                                                    <button type="submit"  class="btn btn-danger my-2">Delete Section</button>
+                                                                                                </form>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div><!-- /.modal-content -->
+                                                                                    </div><!-- /.modal-dialog -->
+                                                                                </div>
                                                                                 <div class="card-body">
                                                                                     <h5 class="card-title" style="min-height: 35px;"><span class="font-weight-light">Section {{$section->id}}</span>: {{$section->title}} <div class="row justify-content-center alignToTitle float-right display-block" id="widgets-of-section-1" style="display: block;">
                                                                                             <button type="button" class="btn btn-outline-secondary btn-rounded btn-sm ml-1 display-block" name="button" data-toggle="modal" data-target="#editmodal"><i class="mdi mdi-pencil-outline"></i> Edit Section</button>
@@ -117,7 +135,6 @@
                                                                                                             <form action="{{route('lessons.destroy',$ls->id)}}" method="POST">
                                                                                                             @csrf
                                                                                                             @method('DELETE')
-                                                                                                            <input type="submit" class="btn btn-danger my-2" value="Delete">
                                                                                                             <button type="submit"  class="btn btn-danger my-2">Delete Lesson</button>
                                                                                                             </form>
                                                                                                         </div>
@@ -134,6 +151,7 @@
                                                                                                     <span class="font-weight-light">
                                                                                                         <img src="http://xxpn-learning-management-system-online.test/assets/backend/lesson_icon/img.png" alt="" height="16">
                                                                                                         Lesson {{$ls->id}} </span>: {{$ls->title}}
+                                                                                                        
                                                                                                 </h5>
                                                                                             </div>
                                                                                             @endforeach
@@ -148,20 +166,22 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-
+                                                    <form action="{{route('courses.update',$crs->id)}}" method="post">
+                                                    @csrf
+                                                    @method('PUT')
                                                         <div class="tab-pane" id="basic">
                                                             <div class="row justify-content-center">
                                                                 <div class="col-xl-8">
                                                                     <div class="form-group row mb-3">
                                                                         <label class="col-md-2 col-form-label" for="course_title">Course Title <span class="required">*</span> </label>
                                                                         <div class="col-md-10">
-                                                                            <input type="text" class="form-control" id="course_title" name="title" placeholder="Enter Course Title" required="">
+                                                                            <input type="text" class="form-control" id="course_title" name="title" placeholder="Enter Course Title" required="" value="{{$crs->title}}">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row mb-3">
                                                                         <label class="col-md-2 col-form-label" for="short_description"> Description</label>
                                                                         <div class="col-md-10">
-                                                                            <textarea name="description" id="short_description" class="form-control"></textarea>
+                                                                            <textarea name="description" id="short_description" class="form-control">{{$crs->description}}</textarea>
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row mb-3">
@@ -209,7 +229,7 @@
                                                                                 <div class="d-flex mt-2">
                                                                                     <div class="flex-grow-1 px-3">
                                                                                         <div class="form-group">
-                                                                                            <input type="text" class="form-control" name="tags" id="tags" placeholder="Provide tags">
+                                                                                            <input type="text" class="form-control" name="tags" id="tags" placeholder="Provide tags" value="{{$crs->tags}}">
                                                                                         </div>
                                                                                         <div class="form-group">
                                                                                             <label>Separate tags with Commas.</label>
@@ -226,18 +246,17 @@
                                                         <div class="tab-pane" id="pricing">
                                                             <div class="row justify-content-center">
                                                                 <div class="col-xl-8">
-
                                                                     <div class="form-group row mb-3">
                                                                         <label class="col-md-2 col-form-label" for="price">Course Price ($)</label>
                                                                         <div class="col-md-10">
-                                                                            <input type="number" class="form-control" id="price" name="price" placeholder="Enter Course Course Price" min="0">
+                                                                            <input type="number" class="form-control" id="price" name="price" placeholder="Enter Course Course Price" min="0" value="{{$crs->price}}">
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="form-group row mb-3">
                                                                         <label class="col-md-2 col-form-label" for="discounted_price">Discounted Price ($)</label>
                                                                         <div class="col-md-10">
-                                                                            <input type="number" class="form-control" name="discount" id="discounted_price" onkeyup="calculateDiscountPercentage(this.value)" min="0">
+                                                                            <input type="number" class="form-control" name="discount" id="discounted_price" value="{{$crs->discount}}" onkeyup="calculateDiscountPercentage(this.value)" min="0">
                                                                         </div>
                                                                     </div>
                                                                 </div> <!-- end col -->
@@ -275,23 +294,23 @@
                                                             </div> <!-- end row -->
                                                         </div>
 
-                                                        <div class="tab-pane" id="finish">
-                                                            <div class="row">
-                                                                <div class="col-12">
-                                                                    <div class="text-center">
-                                                                        <h2 class="mt-0"><i class="mdi mdi-check-all"></i></h2>
-                                                                        <h3 class="mt-0">Thank You !</h3>
+                                                            <div class="tab-pane" id="finish">
+                                                                <div class="row">
+                                                                    <div class="col-12">
+                                                                        <div class="text-center">
+                                                                            <h2 class="mt-0"><i class="mdi mdi-check-all"></i></h2>
+                                                                            <h3 class="mt-0">Thank You !</h3>
 
-                                                                        <p class="w-75 mb-2 mx-auto">You Are Just One Click Away</p>
+                                                                            <p class="w-75 mb-2 mx-auto">You Are Just One Click Away</p>
 
-                                                                        <div class="mb-3 mt-3">
-                                                                            <button type="button" class="btn btn-primary text-center" onclick="checkRequiredFields()">Submit</button>
+                                                                            <div class="mb-3 mt-3">
+                                                                                <button type="submit" class="btn btn-primary text-center" >Submit</button>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                </div> <!-- end col -->
-                                                            </div> <!-- end row -->
-                                                        </div>
-
+                                                                    </div> <!-- end col -->
+                                                                </div> <!-- end row -->
+                                                            </div>
+                                                    </form>
                                                         <ul class="list-inline mb-0 wizard text-center">
                                                             <li class="previous list-inline-item disabled">
                                                                 <a href="javascript::" class="btn btn-info"> <i class="mdi mdi-arrow-left-bold"></i> </a>
@@ -300,11 +319,8 @@
                                                                 <a href="javascript::" class="btn btn-info"> <i class="mdi mdi-arrow-right-bold"></i> </a>
                                                             </li>
                                                         </ul>
-
                                                     </div> <!-- tab-content -->
                                                 </div> <!-- end #progressbarwizard-->
-
-                                            </form>
                                         </div>
                                     </div><!-- end row-->
                                 </div> <!-- end card-body-->
@@ -559,21 +575,7 @@
             </div>
 
 
-            <div class="modal" id="deletemodal">
-                <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-body p-4">
-                            <div class="text-center">
-                                <i class="dripicons-information h1 text-info"></i>
-                                <h4 class="mt-2">Heads Up!</h4>
-                                <p class="mt-3">Are You Sure u want to delete This Section?</p>
-                                <button type="button" class="btn btn-info my-2" data-dismiss="modal">Cancel</button>
-                                <a href="" id="update_link" class="btn btn-danger my-2">Delete Section</a>
-                            </div>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div>
+            
 
 
 

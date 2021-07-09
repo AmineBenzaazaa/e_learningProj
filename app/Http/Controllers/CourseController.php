@@ -27,8 +27,15 @@ class CourseController extends Controller
      */
     public function create()
     {
+        $user=auth()->user();
+        if($user->hasRole('admin')){
         $cts = Categorie::get();
         return view('instructeur/add_course')->with('cts', $cts);
+        }
+        else{
+            
+            return view('instructeur/add_course')->with('cts', $user->courses); 
+        }
     }
 
 
@@ -58,7 +65,6 @@ class CourseController extends Controller
             'price' => $request->price,
             'discount' => $request->discount,
             'tags' => $request->tags,
-            'overview_provider' => $request->overview_provider,
             'overview_url' => $request->overview_url,
             'thumbnail' => $vrai,
             'status' => "pending",
@@ -100,8 +106,34 @@ class CourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+        $old=Course::where('id',$id)->first();
+        $user=auth()->user();
+        if($user->hasRole('admin')){
+            $old->status=$request->status;
+            return redirect(route('courses.index'));
+        }
+        else{
+        if ($request->hasFile('file')) {
+            $file = $request->file;
+            $new_file = time() . $request->id . $file->GetClientOriginalName();
+            $file->move('storage/' . auth()->user()->id . '/image', $new_file);
+            $vrai = 'storage/' . auth()->user()->id . '/image/' . $new_file;
+        } else {
+            $vrai = $old->thumbnail;
+        }
+        $old->title=$request->title;
+        $old->description=$request->description;
+        $old->category_id=$request->category;
+        $old->level=$request->level;
+        $old->language=$request->language;
+        $old->price=$request->price;
+        $old->discount=$request->discount;
+        $old->tags=$request->tags;
+        $old->thumbnail=$vrai;
+        $old->save();
+        return redirect(route('courses.index'));
+    }
     }
 
     /**
@@ -112,6 +144,7 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Course::where('id',$id)->delete();
+        return redirect(route('courses.index'));
     }
 }
