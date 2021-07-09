@@ -102,7 +102,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="mb-3 header-title">Course List</h4>
-                                    <form class="row justify-content-center" action="http://pn-learning-management-system-online.test/admin/courses" method="get">
+                                    <form class="row justify-content-center" action="courses" method="get">
                                         <!-- Course Categories -->
                                         <div class="col-xl-3">
                                             <div class="form-group">
@@ -224,11 +224,9 @@
                                                                             <i class="mdi mdi-dots-vertical"></i>
                                                                         </button>
                                                                         <ul class="dropdown-menu">
-                                                                            <li><a class="dropdown-item" href="http://pn-learning-management-system-online.test/home/course/algebre/1" target="_blank">View Course On Frontend</a></li>
+                                                                            <li><a class="dropdown-item" href="#" target="_blank">View Course On Frontend</a></li>
                                                                             <li><a class="dropdown-item" href="{{route('courses.edit',$ct->id)}}">Edit This Course</a></li>
-                                                                            <li><a class="dropdown-item" href="http://pn-learning-management-system-online.test/admin/course_form/course_edit/1">Section &amp; Lesson</a></li>
-                                                                            <li>Mark As Active </li>
-                                                                            <li><a class="dropdown-item" href="#" onclick="confirm_modal('http://pn-learning-management-system-online.test/admin/course_actions/delete/1');">Delete</a></li>
+                                                                            <li><a class="dropdown-item" href="#">Delete</a></li>
                                                                         </ul>
                                                                     </div>
                                                                 </td>

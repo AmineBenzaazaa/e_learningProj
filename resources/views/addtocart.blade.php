@@ -224,7 +224,8 @@
                         <div class="title">0 Courses In Cart</div>
                         <div class="">
                             <ul class="cart-course-list">
-                                                        </ul>
+
+                        </ul>
                         </div>
                     </div>
 

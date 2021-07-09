@@ -30,7 +30,7 @@
                                 <div class="card-body p-0">
                                     <div class="row no-gutters">
                                         <div class="col-sm-6 col-xl-3">
-                                            <a href="http://pn-learning-management-system-online.test/admin/courses" class="text-secondary">
+                                            <a href="{{url('admin\courses')}}" class="text-secondary">
                                                 <div class="card shadow-none m-0">
                                                     <div class="card-body text-center">
                                                         <i class="dripicons-link text-muted" style="font-size: 24px;"></i>
@@ -42,7 +42,7 @@
                                         </div>
 
                                         <div class="col-sm-6 col-xl-3">
-                                            <a href="http://pn-learning-management-system-online.test/admin/courses" class="text-secondary">
+                                            <a href="{{url('admin\courses')}}" class="text-secondary">
                                                 <div class="card shadow-none m-0 border-left">
                                                     <div class="card-body text-center">
                                                         <i class="dripicons-link-broken text-muted" style="font-size: 24px;"></i>
@@ -54,7 +54,7 @@
                                         </div>
 
                                         <div class="col-sm-6 col-xl-3">
-                                            <a href="http://pn-learning-management-system-online.test/admin/courses" class="text-secondary">
+                                            <a href="{{url('admin\courses')}}" class="text-secondary">
                                                 <div class="card shadow-none m-0 border-left">
                                                     <div class="card-body text-center">
                                                         <i class="dripicons-star text-muted" style="font-size: 24px;"></i>
@@ -66,7 +66,7 @@
                                         </div>
 
                                         <div class="col-sm-6 col-xl-3">
-                                            <a href="http://pn-learning-management-system-online.test/admin/courses" class="text-secondary">
+                                            <a href="{{url('admin\courses')}}" class="text-secondary">
                                                 <div class="card shadow-none m-0 border-left">
                                                     <div class="card-body text-center">
                                                         <i class="dripicons-tags text-muted" style="font-size: 24px;"></i>
@@ -87,7 +87,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="mb-3 header-title">Course List</h4>
-                                    <form class="row justify-content-center" action="http://pn-learning-management-system-online.test/admin/courses" method="get">
+                                    <form class="row justify-content-center" action="{{url('admin\courses')}}" method="get">
                                         <!-- Course Categories -->
                                         <div class="col-xl-3">
                                             <div class="form-group">
@@ -148,48 +148,51 @@
                                                 <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 16.8px;" aria-sort="ascending" aria-label="#: activate to sort column descending">#</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 138.8px;" aria-label="Title: activate to sort column ascending">Title</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 74.8px;" aria-label="Category: activate to sort column ascending">Category</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 133.8px;" aria-label="Lesson &amp;amp; Section: activate to sort column ascending">Lesson &amp; Section</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 130.8px;" aria-label="Enrolled Student: activate to sort column ascending">Enrolled Student</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 54.8px;" aria-label="Status: activate to sort column ascending">Status</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 44.8px;" aria-label="Price: activate to sort column ascending">Price</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 62.8px;" aria-label="Actions: activate to sort column ascending">Actions</th></tr>
                                             </thead>
                                             <tbody>
-                                                                                
-                                                                        <tr role="row" class="odd">
-                                                        <td tabindex="0" class="sorting_1">1</td>
+                                                    @foreach($cts as $ct)
+                                                    <tr role="row" class="odd">
+                                                        <td tabindex="0" class="sorting_1">{{$ct->id}}</td>
                                                         <td>
-                                                            <strong><a href="http://pn-learning-management-system-online.test/admin/course_form/course_edit/1">Algebre</a></strong><br>
-                                                            <small class="text-muted">Instructor: <b>admin admin</b></small>
+                                                            <span class="badge badge-dark-lighten">{{$ct->title}}</span>
+                                                            <small class="text-muted">{{auth()->user()->name}} </small>
                                                         </td>
                                                         <td>
-                                                            <span class="badge badge-dark-lighten">Algebre</span>
-                                                        </td>
-                                                        <td>
-                                                            <small class="text-muted"><b>Total Section</b>: 1</small><br>
-                                                            <small class="text-muted"><b>Total Lesson</b>: 0</small><br>
-                                                        </td>
-                                                        <td>
-                                                            <small class="text-muted"><b>Total Enrolment</b>: 0</small>
+                                                            <span class="badge badge-dark-lighten">{{$ct->category->title}}</span>
                                                         </td>
                                                         <td class="text-center">
-                                                                                                        <i class="mdi mdi-circle" style="color: #FFC107; font-size: 19px;" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pending"></i>
-                                                                                                </td>
+                                                            <span class="badge badge-dark-lighten">{{$ct->level}}</span>
+                                                        </td>
                                                         <td>
-                                                                                                                                                        <span class="badge badge-dark-lighten">$25</span>
-                                                                                                                                            </td>
+                                                            <span class="badge badge-dark-lighten">{{$ct->language}}</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="badge badge-dark-lighten">{{$ct->price}}</span>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <span class="badge badge-dark-lighten">{{$ct->discount}}</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="badge badge-dark-lighten">{{$ct->overview_provider}}</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="badge badge-dark-lighten">{{$ct->status}}</span>
+                                                        </td>
                                                         <td>
                                                             <div class="dropright dropright">
-                                                            <button type="button" class="btn btn-sm btn-outline-primary btn-rounded btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                <i class="mdi mdi-dots-vertical"></i>
-                                                            </button>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a class="dropdown-item" href="http://pn-learning-management-system-online.test/home/course/algebre/1" target="_blank">View Course On Frontend</a></li>
-                                                                <li><a class="dropdown-item" href="http://pn-learning-management-system-online.test/admin/course_form/course_edit/1">Edit This Course</a></li>
-                                                                <li><a class="dropdown-item" href="http://pn-learning-management-system-online.test/admin/course_form/course_edit/1">Section &amp; Lesson</a></li>
-                                                                <li>
-                                                                                                                                                                                    <a class="dropdown-item" href="#" onclick="confirm_modal('http://pn-learning-management-system-online.test/admin/change_course_status_for_admin/active/1/all/all/all/all', 'Inform Instructor');">
-                                                                                Mark As Active                                                          </a>
-                                                                                                                                                                        </li>
-                                                                <li><a class="dropdown-item" href="#" onclick="confirm_modal('http://pn-learning-management-system-online.test/admin/course_actions/delete/1');">Delete</a></li>
-                                                            </ul>
-                                                        </div>
+                                                                <button type="button" class="btn btn-sm btn-outline-primary btn-rounded btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <i class="mdi mdi-dots-vertical"></i>
+                                                                </button>
+                                                                <ul class="dropdown-menu">
+                                                                    <li><a class="dropdown-item" href="#" >View Course On Frontend</a></li>
+                                                                    <li><a class="dropdown-item" href="#" >Mark As Active</a></li>
+                                                                    <li><a class="dropdown-item" href="#" >Delete</a></li>
+                                                                </ul>
+                                                            </div>
                                                         </td>
-                                                    </tr></tbody>
-                                        </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="course-datatable_info" role="status" aria-live="polite">Showing 1 to 1 of 1 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="course-datatable_paginate"><ul class="pagination pagination-rounded"><li class="paginate_button page-item previous disabled" id="course-datatable_previous"><a href="#" aria-controls="course-datatable" data-dt-idx="0" tabindex="0" class="page-link"><i class="mdi mdi-chevron-left"></i></a></li><li class="paginate_button page-item active"><a href="#" aria-controls="course-datatable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="course-datatable_next"><a href="#" aria-controls="course-datatable" data-dt-idx="2" tabindex="0" class="page-link"><i class="mdi mdi-chevron-right"></i></a></li></ul></div></div></div></div>
+                                                    </tr>
+                                                    @endforeach
+                                                </tbody>
+                                        </table></div></div><div class="row"><div class="col-sm-12 col-md-5">
+                                                                <div class="dataTables_info" id="course-datatable_info" role="status" aria-live="polite">Showing 1 to 1 of 1 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="course-datatable_paginate"><ul class="pagination pagination-rounded"><li class="paginate_button page-item previous disabled" id="course-datatable_previous"><a href="#" aria-controls="course-datatable" data-dt-idx="0" tabindex="0" class="page-link"><i class="mdi mdi-chevron-left"></i></a></li><li class="paginate_button page-item active"><a href="#" aria-controls="course-datatable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="course-datatable_next"><a href="#" aria-controls="course-datatable" data-dt-idx="2" tabindex="0" class="page-link"><i class="mdi mdi-chevron-right"></i></a></li></ul></div></div></div></div>
                                                                 </div>
                             </div>
                         </div>

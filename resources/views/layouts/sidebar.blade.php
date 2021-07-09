@@ -51,7 +51,7 @@
 
 		<li class="side-nav-item">
 			<a href="{{url('user/profile')}}" class="side-nav-link " aria-expanded="false">
-				<i class="dripicons-message"></i>
+				<i class="dripicons-toggles"></i>
 				<span>Settings</span>
 			</a>
 		</li>

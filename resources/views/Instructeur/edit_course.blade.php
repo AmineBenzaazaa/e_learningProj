@@ -28,56 +28,12 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="header-title mb-3">Course Manager <a href="http://xxpn-learning-management-system-online.test/admin/preview/1" class="alignToTitle btn btn-outline-secondary btn-rounded btn-sm ml-1" target="_blank">View On Frontend <i class="mdi mdi-arrow-right"></i> </a>
-                                        <a href="http://xxpn-learning-management-system-online.test/admin/courses" class="alignToTitle btn btn-outline-secondary btn-rounded btn-sm"> <i class=" mdi mdi-keyboard-backspace"></i> Back To Course List</a>
+                                        <a href="{{url('courses')}}" class="alignToTitle btn btn-outline-secondary btn-rounded btn-sm"> <i class=" mdi mdi-keyboard-backspace"></i> Back To Course List</a>
                                     </h4>
 
                                     <div class="row">
                                         <div class="col-xl-12">
                                                 <div id="basicwizard">
-                                                    <ul class="nav nav-pills nav-justified form-wizard-header mb-3">
-                                                        <li class="nav-item">
-                                                            <a href="#curriculum" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2 active">
-                                                                <i class="mdi mdi-account-circle mr-1"></i>
-                                                                <span class="d-none d-sm-inline">Curriculum</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="nav-item">
-                                                            <a href="#basic" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                                <i class="mdi mdi-fountain-pen-tip mr-1"></i>
-                                                                <span class="d-none d-sm-inline">Basic</span>
-                                                            </a>
-                                                        </li>
-
-                                                        <li class="nav-item">
-                                                            <a href="#requirements" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                                <i class="mdi mdi-bell-alert mr-1"></i>
-                                                                <span class="d-none d-sm-inline">Tags</span>
-                                                            </a>
-                                                        </li>
-
-                                                        <li class="nav-item">
-                                                            <a href="#pricing" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                                <i class="mdi mdi-currency-cny mr-1"></i>
-                                                                <span class="d-none d-sm-inline">Pricing</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="nav-item">
-                                                            <a href="#media" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                                <i class="mdi mdi-library-video mr-1"></i>
-                                                                <span class="d-none d-sm-inline">Media</span>
-                                                            </a>
-                                                        </li>
-
-                                                        <li class="nav-item">
-                                                            <a href="#finish" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                                <i class="mdi mdi-checkbox-marked-circle-outline mr-1"></i>
-                                                                <span class="d-none d-sm-inline">Finish</span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-
-
-
                                                     <div class="tab-content b-0 mb-0">
                                                         <div class="tab-pane active" id="curriculum">
                                                             <div class="row justify-content-center">
@@ -311,14 +267,6 @@
                                                                 </div> <!-- end row -->
                                                             </div>
                                                     </form>
-                                                        <ul class="list-inline mb-0 wizard text-center">
-                                                            <li class="previous list-inline-item disabled">
-                                                                <a href="javascript::" class="btn btn-info"> <i class="mdi mdi-arrow-left-bold"></i> </a>
-                                                            </li>
-                                                            <li class="next list-inline-item">
-                                                                <a href="javascript::" class="btn btn-info"> <i class="mdi mdi-arrow-right-bold"></i> </a>
-                                                            </li>
-                                                        </ul>
                                                     </div> <!-- tab-content -->
                                                 </div> <!-- end #progressbarwizard-->
                                         </div>
