@@ -145,7 +145,15 @@
                                 <div class="table-responsive-sm mt-4">
                                                         <div id="course-datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="course-datatable_length"><label>Show <select name="course-datatable_length" aria-controls="course-datatable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="course-datatable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="course-datatable"></label></div></div></div><div class="row"><div class="col-sm-12"><div style="position: absolute; height: 1px; width: 0px; overflow: hidden;"><input type="text" tabindex="0"></div><table id="course-datatable" class="table table-striped dt-responsive nowrap dataTable no-footer dtr-inline" width="100%" data-page-length="25" role="grid" aria-describedby="course-datatable_info" style="width: 100%; position: relative;">
                                             <thead>
-                                                <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 16.8px;" aria-sort="ascending" aria-label="#: activate to sort column descending">#</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 138.8px;" aria-label="Title: activate to sort column ascending">Title</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 74.8px;" aria-label="Category: activate to sort column ascending">Category</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 133.8px;" aria-label="Lesson &amp;amp; Section: activate to sort column ascending">Lesson &amp; Section</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 130.8px;" aria-label="Enrolled Student: activate to sort column ascending">Enrolled Student</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 54.8px;" aria-label="Status: activate to sort column ascending">Status</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 44.8px;" aria-label="Price: activate to sort column ascending">Price</th><th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 62.8px;" aria-label="Actions: activate to sort column ascending">Actions</th></tr>
+                                                <tr role="row">
+                                                <th class="sorting_asc" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 16.8px;" aria-sort="ascending" aria-label="#: activate to sort column descending">#</th>
+                                                <th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 138.8px;" aria-label="Title: activate to sort column ascending">Title</th>
+                                                <th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 74.8px;" aria-label="Category: activate to sort column ascending">Category</th>
+                                                <th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 133.8px;" aria-label="Lesson &amp;amp; Section: activate to sort column ascending">level</th>
+                                                <th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 130.8px;" aria-label="Enrolled Student: activate to sort column ascending">language</th>
+                                                <th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 54.8px;" aria-label="Status: activate to sort column ascending">price</th>
+                                                <th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 44.8px;" aria-label="Price: activate to sort column ascending">discount</th>
+                                                <th class="sorting" tabindex="0" aria-controls="course-datatable" rowspan="1" colspan="1" style="width: 62.8px;" aria-label="Actions: activate to sort column ascending">status</th></tr>
                                             </thead>
                                             <tbody>
                                                     @foreach($cts as $ct)
@@ -171,9 +179,6 @@
                                                             <span class="badge badge-dark-lighten">{{$ct->discount}}</span>
                                                         </td>
                                                         <td>
-                                                            <span class="badge badge-dark-lighten">{{$ct->overview_provider}}</span>
-                                                        </td>
-                                                        <td>
                                                             <span class="badge badge-dark-lighten">{{$ct->status}}</span>
                                                         </td>
                                                         <td>
@@ -182,9 +187,27 @@
                                                                     <i class="mdi mdi-dots-vertical"></i>
                                                                 </button>
                                                                 <ul class="dropdown-menu">
-                                                                    <li><a class="dropdown-item" href="#" >View Course On Frontend</a></li>
-                                                                    <li><a class="dropdown-item" href="#" >Mark As Active</a></li>
-                                                                    <li><a class="dropdown-item" href="#" >Delete</a></li>
+                                                                    <li><a class="dropdown-item" href="{{route('courses.show',$ct->id)}}" >View Course On Frontend</a></li>
+                                                                    <form action="{{route('courses.update',$ct->id)}}" method="post">
+                                                                    @csrf
+                                                                    @method('PUT')
+                                                                    @if($ct->status=="pending")
+                                                                    <li>
+                                                                    <button class="dropdown-item"  type="submit">Mark As Active</button>
+                                                                    </li>
+                                                                    @else
+                                                                    <li>
+                                                                    <button class="dropdown-item"  type="submit">Mark As Draft</button>
+                                                                    </li>
+                                                                    @endif
+                                                                    </form>
+                                                                    <form action="{{route('courses.destroy',$ct->id)}}" method="post">
+                                                                    @csrf
+                                                                    @method('delete')
+                                                                    <li>
+                                                                    <button class="dropdown-item"  type="submit">Delete</button>
+                                                                    </li>
+                                                                    </form>
                                                                 </ul>
                                                             </div>
                                                         </td>

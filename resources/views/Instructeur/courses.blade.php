@@ -224,9 +224,15 @@
                                                                             <i class="mdi mdi-dots-vertical"></i>
                                                                         </button>
                                                                         <ul class="dropdown-menu">
-                                                                            <li><a class="dropdown-item" href="#" target="_blank">View Course On Frontend</a></li>
+                                                                            <li><a class="dropdown-item" href="{{route('courses.show',$ct->id)}}" target="_blank">View Course On Frontend</a></li>
                                                                             <li><a class="dropdown-item" href="{{route('courses.edit',$ct->id)}}">Edit This Course</a></li>
-                                                                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                                            <form action="{{route('courses.destroy',$ct->id)}}" method="post">
+                                                                            @csrf
+                                                                            @method('delete')
+                                                                            <li>
+                                                                            <button class="dropdown-item" type="submit">Delete</button>
+                                                                            </li>
+                                                                            </form>
                                                                         </ul>
                                                                     </div>
                                                                 </td>

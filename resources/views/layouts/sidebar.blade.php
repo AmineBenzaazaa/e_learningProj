@@ -23,7 +23,7 @@
 		</li>
 
 		<li class="side-nav-item">
-			<a href="{{url('admin/courses')}}" class="side-nav-link " aria-expanded="false">
+			<a href="{{route('courses.index')}}" class="side-nav-link " aria-expanded="false">
 				<i class="dripicons-archive"></i>
 				<span>Courses</span>
 			</a>

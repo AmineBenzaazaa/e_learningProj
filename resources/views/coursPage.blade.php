@@ -203,7 +203,7 @@
     <div class="row align-items-end">
       <div class="col-lg-8">
         <div class="course-header-wrap">
-          <h1 class="title">Cours Name</h1>
+          <h1 class="title">{{$course->title}}</h1>
           <p class="subtitle"></p>
           <div class="rating-row">
             <span class="course-badge best-seller">Level</span>
@@ -217,10 +217,10 @@
         </div>
         <div class="created-row">
           <span class="created-by">
-            Created By   <a href="">Instructeur name</a>
+            Created By   <a href="">{{$course->user->name}}</a>
           </span>
-                    <span class="last-updated-date">Date Of creation</span>
-                    <span class="comment"><i class="fas fa-comment"></i>Language</span>
+                    <span class="last-updated-date">{{$course->created_at}}</span>
+                    <span class="comment"><i class="fas fa-comment"></i>{{$course->language}}</span>
         </div>
       </div>
     </div>
@@ -236,7 +236,7 @@
         <div class="what-you-get-box">
           <div class="what-you-get-title">What Will I Learn?</div>
           <ul class="what-you-get__items">
-           Description
+           {{$course->description}}
           </ul>
         </div>
         <br>
@@ -244,47 +244,26 @@
           <div class="course-curriculum-title clearfix">
             <div class="title float-left">Curriculum For This Course</div>
             <div class="float-right">
-              <span class="total-lectures">        </span>
-              <span class="total-time">
-                00:00:00 Hours              </span>
+              <span class="total-lectures">        
+              </span>
             </div>
           </div>
+          @foreach($section as $sec)
           <div class="course-curriculum-accordion">
             <div class="lecture-group-wrapper">
               <div class="lecture-group-title clearfix" data-toggle="collapse" data-target="#collapse1" aria-expanded="true">
                 <div class="title float-left">
-                     section 1
+                     {{$sec->name}}
                 </div>
                 <div class="float-right">
                   <span class="total-lectures">
-                    0 Lessons                  
-                  </span>
-                  <span class="total-time">
-                    00:00:00 Hours                  
+                    count($sec->lessons) Lessons                  
                   </span>
                 </div>
               </div>
-              <div class="lecture-group-title clearfix" data-toggle="collapse" data-target="#collapse1" aria-expanded="true">
-                <div class="title float-left">
-                     section 2
-                </div>
-                <div class="float-right">
-                  <span class="total-lectures">
-                    0 Lessons                  
-                  </span>
-                  <span class="total-time">
-                    00:00:00 Hours                  
-                  </span>
-                </div>
-              </div>
-              
-
-              <div id="collapse1" class="lecture-list collapse show">
-                <ul>
-                </ul>
-            </div>
           </div>
-                </div>
+        </div>
+        @endforeach
     </div>
 
     <div class="requirements-box">
@@ -292,8 +271,7 @@
       <div class="requirements-content">
         <ul class="requirements__list">
         <div class="simple-tags">
-        Lorem,ipsum,dolor,sit.
-
+        {{$course->tags}}
         </div>
         </ul>
       </div>
@@ -320,14 +298,14 @@
       <div class="col-lg-8">
         <div class="about-instructor-details view-more-parent">
           <div class="instructor-name">
-            <a href="">Instructeur Name</a>
+            <a href="">{{$course->user->name}}</a>
           </div>
           <div class="instructor-title">
           Lorem, ipsum dolor.
-                      </div>
-          <div class="instructor-bio">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. At vel quo natus itaque aliquid rerum possimus molestias sit omnis blanditiis!
-                      </div>
+          </div>
+            <div class="instructor-bio">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. At vel quo natus itaque aliquid rerum possimus molestias sit omnis blanditiis!
+            </div>
         </div>
       </div>
     </div>
@@ -447,8 +425,8 @@
       </div>
         <div class="course-sidebar-text-box">
       <div class="price">
-        <span class="current-price"><span class="current-price">$25</span></span>
-        <input type="hidden" id="total_price_of_checking_out" value="$25">
+        <span class="current-price"><span class="current-price">{{$course->price." "."DH"}}</span></span>
+        <input type="hidden" id="total_price_of_checking_out" value="{{$course->price}}">
       </div>
 
       <div class="buy-btns">

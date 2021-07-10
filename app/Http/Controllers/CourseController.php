@@ -16,8 +16,14 @@ class CourseController extends Controller
      */
     public function index()
     {
+        $user=auth()->user();
         $cts = Course::get();
-        return view('instructeur/courses')->with('cts', $cts);
+        if($user->hasRole('admin')){
+            return view('admin/courses')->with('cts', $cts);
+        }
+        else{
+            return view('instructeur/courses')->with('cts', $user->courses); 
+        }
     }
 
     /**
@@ -27,15 +33,8 @@ class CourseController extends Controller
      */
     public function create()
     {
-        $user=auth()->user();
-        if($user->hasRole('admin')){
         $cts = Categorie::get();
-        return view('instructeur/add_course')->with('cts', $cts);
-        }
-        else{
-            
-            return view('instructeur/add_course')->with('cts', $user->courses); 
-        }
+        return view('instructeur/add_course')->with('cts', $cts); 
     }
 
 
@@ -81,7 +80,9 @@ class CourseController extends Controller
      */
     public function show($id)
     {
-        //
+        $courses = Course::where('id',$id)->first();
+        $sections=$courses->sections();
+        return view('coursPage')->with('course',$courses)->with('section',$sections);
     }
 
     /**
@@ -107,10 +108,17 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {   
+        
         $old=Course::where('id',$id)->first();
         $user=auth()->user();
         if($user->hasRole('admin')){
-            $old->status=$request->status;
+            if($old->status=="pending"){
+                $old->status="active";
+            }
+            else{
+                $old->status="pending";
+            }
+            $old->save();
             return redirect(route('courses.index'));
         }
         else{
