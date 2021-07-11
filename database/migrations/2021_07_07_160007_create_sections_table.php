@@ -17,7 +17,7 @@ class CreateSectionsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->integer('course_id')->unsigned();
-            $table->foreign('course_id')->references('id')->on('courses');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
             $table->timestamps();
         });
     }
