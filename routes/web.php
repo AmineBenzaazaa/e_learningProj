@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Course;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\StudentController;
@@ -18,7 +19,9 @@ use App\Http\Controllers\LessonController;
 */
 
 Route::get('/', function () {
-  return view('welcome');
+  $user=auth()->user();
+        $cts = Course::get();
+  return view('welcome')->with('cts', $cts);
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

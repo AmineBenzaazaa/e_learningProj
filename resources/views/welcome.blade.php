@@ -296,16 +296,17 @@
             </div>
 
             <div class="row pb-5">
+                @foreach($cts as $v)
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
                     <div class="card course-card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
                         <div class="card-image w-100 mb-3">
-                            <a href="default-course-details.html" class="video-bttn position-relative d-block"><img src="{{ url('/uploads/v-5.jpg') }}" alt="image" class="w-100"></a>
+                            <a href="{{route('courses.show',$v->id)}}" class="video-bttn position-relative d-block">
+                                <img src="{{$v->thumbnail}}" alt="image" class="w-100"></a>
                         </div>
                         <div class="card-body pt-0">
-                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-danger d-inline-block text-danger mr-1">Category</span>
-                            <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">$</span> 370</span>
-                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="default-course-details.html" class="text-dark text-grey-900">The Data Science Course Complete Data Science </a></h4>
-                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 23 Lesson <span class="float-right mt-1 font-xssss text-grey-500">87%</span></h6>
+                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-danger d-inline-block text-danger mr-1">{{$v->category->name}}</span>
+                            <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">DH</span> {{$v->price}}</span>
+                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="default-course-details.html" class="text-dark text-grey-900">{{$v->title}}</a></h4>
 
 
                             <div class="star float-left text-left mb-0">
@@ -319,8 +320,7 @@
                         </div>
                     </div>
                 </div>
-
-
+                @endforeach
             </div>
         </div>
     </div>
