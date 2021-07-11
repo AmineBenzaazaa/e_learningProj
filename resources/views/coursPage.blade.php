@@ -251,13 +251,13 @@
           @foreach($section as $sec)
           <div class="course-curriculum-accordion">
             <div class="lecture-group-wrapper">
-              <div class="lecture-group-title clearfix" data-toggle="collapse" data-target="#collapse1" aria-expanded="true">
+              <div class="lecture-group-title clearfix">
                 <div class="title float-left">
-                     {{$sec->name}}
+                     {{$sec->title}}
                 </div>
                 <div class="float-right">
                   <span class="total-lectures">
-                    count($sec->lessons) Lessons                  
+                    {{count($sec->lessons)}} Lessons                  
                   </span>
                 </div>
               </div>
