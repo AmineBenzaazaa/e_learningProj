@@ -306,8 +306,20 @@
                         <div class="card-body pt-0">
                             <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-danger d-inline-block text-danger mr-1">{{$v->category->name}}</span>
                             <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">DH</span> {{$v->price}}</span>
-                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="default-course-details.html" class="text-dark text-grey-900">{{$v->title}}</a></h4>
+                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="{{route('courses.show',$v->id)}}" class="text-dark text-grey-900">{{$v->title}}</a></h4>
+                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 
+                            @php
+                                    @foreach($v->sections as $a)
+                                        $var = 0;
+                                        @foreach($a->lessons as $b)
+                                            $var =$var+1;
+                                        @endforeach
+                                    @endforeach
+                                echo $var;
+                            @endphp
+                           
 
+                            <span class="float-right mt-1 font-xssss text-grey-500">
 
                             <div class="star float-left text-left mb-0">
                                 <img src="{{ url('/uploads/star.png') }}" alt="star" class="w10 mr-1 float-left">
@@ -316,7 +328,7 @@
                                 <img src="{{ url('/uploads/star.png') }}" alt="star" class="w10 mr-1 float-left">
                                 <img src="{{ url('/uploads/star-disable.png') }}" alt="star" class="w10 float-left mr-2">
                             </div>
-                            <p class="review-link mt-0 font-xssss float-right mb-2 fw-500 text-grey-500 lh-3"> 2 customer review</p>
+                            <p class="review-link mt-0 font-xssss float-right mb-2 fw-500 text-grey-500 lh-3"> 0 customer review</p>
                         </div>
                     </div>
                 </div>

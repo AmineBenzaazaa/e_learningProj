@@ -418,7 +418,7 @@
   <div class="course-sidebar natural">
           <div class="preview-video-box">
         <a data-toggle="modal" data-target="#CoursePreviewModal">
-          <img src="http://pn-learning-management-system-online.test/uploads/thumbnails/course_thumbnails/course-thumbnail.png" alt="" class="img-fluid">
+          <img src="/{{$course->thumbnail}}" alt="" class="img-fluid">
           <span class="preview-text">Preview This Course</span>
           <span class="play-btn"></span>
         </a>

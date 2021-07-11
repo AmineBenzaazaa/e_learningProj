@@ -150,14 +150,14 @@
                                                                     <div class="col-xl-8">
 
                                                                         <div class="form-group row mb-3">
-                                                                            <label class="col-md-2 col-form-label" for="price">Course Price ($)</label>
+                                                                            <label class="col-md-2 col-form-label" for="price">Course Price (DH)</label>
                                                                             <div class="col-md-10">
                                                                                 <input type="number" class="form-control" id="price" name="price" placeholder="Enter Course Course Price" min="0">
                                                                             </div>
                                                                         </div>
 
                                                                         <div class="form-group row mb-3">
-                                                                            <label class="col-md-2 col-form-label" for="discounted_price">Discounted Price ($)</label>
+                                                                            <label class="col-md-2 col-form-label" for="discounted_price">Discounted Price (DH)</label>
                                                                             <div class="col-md-10">
                                                                                 <input type="number" class="form-control" name="discount" id="discounted_price" onkeyup="calculateDiscountPercentage(this.value)" min="0">
                                                                             </div>
